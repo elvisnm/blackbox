@@ -1,0 +1,101 @@
+# The .blackbox/ Specification
+
+This document defines what a `.blackbox/` folder looks like inside any project. Any project can adopt Blackbox by adding this structure — either manually or using `bbox init`.
+
+## Folder Structure
+
+```
+your-project/
+  .blackbox/
+    blueprints/
+      _template.md                  # Blueprint template
+      feat/                         # Feature blueprints
+        auth-sso.md
+        dashboard.md
+      fix/                          # Bug fix blueprints
+        payment-timeout.md
+      improve/                      # Improvement/refactor blueprints
+        cache-invalidation.md
+      hotfix/                       # Urgent production fix blueprints
+        auth-crash.md
+    prs/
+      _template.md                  # PR document template
+      feat/                         # PR docs for feature blueprints
+        auth-sso.md
+      fix/
+      improve/
+      hotfix/
+      reviews/                      # PR review artifacts
+        review-feat-auth-sso.md
+  src/
+  package.json
+  ...
+```
+
+## Categories
+
+| Folder     | Purpose              | Typical path |
+|------------|----------------------|-------------|
+| `feat/`    | New functionality    | Full workflow: Asana ticket -> blueprint -> code |
+| `fix/`     | Bug fixes            | May skip design phase |
+| `improve/` | Improvements/refactors | May skip design phase |
+| `hotfix/`  | Urgent production fixes | Minimal workflow: straight to implementation |
+
+## Naming Convention
+
+`{short-description}.md` inside the appropriate type folder.
+
+- Lowercase, kebab-case
+- Keep it short but descriptive (2-4 words)
+- Example: `feat/auth-sso.md`, `fix/payment-timeout.md`, `hotfix/auth-crash.md`
+
+## Blueprint Template
+
+Every blueprint follows the template at `_template.md`. It has two kinds of sections:
+
+**Asana-owned sections** (filled by `/scaffold` from the Asana ticket):
+- Goal, Context, Requirements, UI/UX, Constraints
+
+**DEV-owned sections** (filled by `/refine` and during implementation):
+- Codebase Context, Implementation Plan, Technical Decisions, Validation
+
+The only metadata a blueprint carries:
+- **Asana link** — connects it back to the workflow
+- **PR link** — connects it to the output
+
+No status. No changelog. No priority. Asana handles workflow tracking.
+
+## PR Documents
+
+PR documents live in `.blackbox/prs/` and mirror the blueprint folder structure.
+
+- `prs/_template.md` — PR document template
+- `prs/{type}/{blueprint-name}.md` — PR doc matching its blueprint
+- `prs/reviews/review-{branch-name}.md` — PR review artifacts
+
+## Blueprint Lifecycle
+
+A blueprint has no status field. Its lifecycle is implicit:
+
+1. **Created** — `/scaffold` generates it from an Asana ticket
+2. **Refined** — `/refine` fills codebase context and implementation plan
+3. **Updated** — `/refresh` pulls changes from Asana (after send-backs)
+4. **Implemented** — DEV builds the feature, fills technical decisions
+5. **Archived** — stays in the repo as documentation after the feature ships
+
+## Linking
+
+- **Asana ticket -> Blueprint**: DEV generates the blueprint from the ticket
+- **Blueprint -> Asana**: The blueprint header contains the Asana ticket URL
+- **Blueprint -> PR**: The blueprint header is updated with the PR link
+- **PR -> Blueprint**: The PR description links back to the blueprint
+
+## Key Principles
+
+**Be specific in context, flexible in implementation.** Precisely define _what_ files to touch and _how_ to validate. Leave room for implementation decisions.
+
+**Scope your context.** Reference only relevant files and directories. Don't dump the entire codebase.
+
+**Update as you go.** The blueprint is a living document. When the developer makes a technical decision, it goes in the blueprint — not just in the code.
+
+**Think future-you.** Six months from now, someone will open this blueprint to understand or change the feature. Write for them.

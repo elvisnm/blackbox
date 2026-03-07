@@ -1,0 +1,22 @@
+{
+  "name": "blackbox",
+  "version": "0.1.0",
+  "description": "Blueprint management system for AI-assisted software development",
+  "type": "module",
+  "scripts": {
+    "bbox": "tsx bin/bbox.ts",
+    "test": "vitest run"
+  },
+  "bin": {
+    "bbox": "./bin/bbox"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.1.0"
+  }
+}

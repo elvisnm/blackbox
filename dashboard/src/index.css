@@ -1,0 +1,347 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+.prose pre {
+  background-color: #f4f4f5;
+  color: #3f3f46;
+}
+
+.prose pre code.hljs {
+  background-color: #f4f4f5;
+  color: #3f3f46;
+}
+
+.dark .prose pre,
+.dark .prose pre code.hljs {
+  background-color: #27272a;
+  color: #e4e4e7;
+}
+
+.dark .prose pre .hljs-keyword,
+.dark .prose pre .hljs-built_in,
+.dark .prose pre .hljs-type {
+  color: #7dd3fc;
+}
+
+.dark .prose pre .hljs-string,
+.dark .prose pre .hljs-number {
+  color: #86efac;
+}
+
+.dark .prose pre .hljs-comment {
+  color: #a1a1aa;
+}
+
+.dark .prose pre .hljs-attr,
+.dark .prose pre .hljs-title {
+  color: #c4b5fd;
+}
+
+.prose pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.prose input[type="checkbox"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #a1a1aa;
+  border-radius: 3px;
+  cursor: default;
+  vertical-align: middle;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.prose input[type="checkbox"]:checked {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.prose input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Diff header bar */
+.diff-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: #f6f8fa;
+  border-bottom: 1px solid #d1d9e0;
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+
+.dark .diff-header-bar {
+  background-color: #161b22;
+  border-bottom-color: #30363d;
+}
+
+.diff-header-old {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.diff-header-new {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.diff-header-arrow {
+  color: #656d76;
+}
+
+.dark .diff-header-old {
+  color: #ff7b72;
+}
+
+.dark .diff-header-new {
+  color: #7ee787;
+}
+
+.dark .diff-header-arrow {
+  color: #8b949e;
+}
+
+/* GitHub-style diff2html — use CSS custom properties to override colors
+   without breaking diff2html's own layout (position:absolute linenumbers, padding, etc.) */
+.diff-container {
+  --d2h-bg-color: #fff;
+  --d2h-border-color: #d1d9e0;
+  --d2h-dim-color: #636c76;
+  --d2h-line-border-color: #d1d9e0;
+  --d2h-file-header-bg-color: #f6f8fa;
+  --d2h-file-header-border-color: #d1d9e0;
+  --d2h-empty-placeholder-bg-color: #f6f8fa;
+  --d2h-empty-placeholder-border-color: #d1d9e0;
+  --d2h-ins-bg-color: #dafbe1;
+  --d2h-ins-border-color: #aceebb;
+  --d2h-ins-highlight-bg-color: #abf2bc;
+  --d2h-ins-label-color: #1a7f37;
+  --d2h-del-bg-color: #ffebe9;
+  --d2h-del-border-color: #ffcecb;
+  --d2h-del-highlight-bg-color: #ff818266;
+  --d2h-del-label-color: #cf222e;
+  --d2h-change-del-color: #fff8c5;
+  --d2h-change-ins-color: #dafbe1;
+  --d2h-info-bg-color: #ddf4ff;
+  --d2h-info-border-color: #bde2fc;
+}
+
+.diff-container .d2h-file-wrapper {
+  border: none;
+  margin-bottom: 0;
+}
+
+.diff-container .d2h-file-header {
+  display: none;
+}
+
+/* Make sure text content is visible — dark text on light bg */
+.diff-container .d2h-code-line-ctn {
+  color: #1f2328;
+}
+
+.diff-container .d2h-code-line-prefix {
+  color: #636c76;
+}
+
+/* Deletion text — readable dark red */
+.diff-container .d2h-del .d2h-code-line-ctn {
+  color: #82071e;
+}
+
+/* Addition text — readable dark green */
+.diff-container .d2h-ins .d2h-code-line-ctn {
+  color: #116329;
+}
+
+/* Hunk header text */
+.diff-container .d2h-info {
+  color: #0969da;
+}
+
+/* ===== Dark mode — override CSS vars ===== */
+.dark .diff-container {
+  --d2h-bg-color: #0d1117;
+  --d2h-border-color: #30363d;
+  --d2h-dim-color: #8b949e;
+  --d2h-line-border-color: #21262d;
+  --d2h-file-header-bg-color: #161b22;
+  --d2h-file-header-border-color: #30363d;
+  --d2h-empty-placeholder-bg-color: hsla(215, 8%, 47%, 0.1);
+  --d2h-empty-placeholder-border-color: #30363d;
+  --d2h-ins-bg-color: rgba(46, 160, 67, 0.15);
+  --d2h-ins-border-color: rgba(46, 160, 67, 0.4);
+  --d2h-ins-highlight-bg-color: rgba(46, 160, 67, 0.4);
+  --d2h-ins-label-color: #3fb950;
+  --d2h-del-bg-color: rgba(248, 81, 73, 0.1);
+  --d2h-del-border-color: rgba(248, 81, 73, 0.4);
+  --d2h-del-highlight-bg-color: rgba(248, 81, 73, 0.4);
+  --d2h-del-label-color: #f85149;
+  --d2h-change-del-color: rgba(210, 153, 34, 0.2);
+  --d2h-change-ins-color: rgba(46, 160, 67, 0.25);
+  --d2h-info-bg-color: rgba(56, 139, 253, 0.1);
+  --d2h-info-border-color: rgba(56, 139, 253, 0.4);
+}
+
+.dark .diff-container .d2h-code-line-ctn {
+  color: #e6edf3;
+}
+
+.dark .diff-container .d2h-code-line-prefix {
+  color: #8b949e;
+}
+
+.dark .diff-container .d2h-del .d2h-code-line-ctn {
+  color: #ffa198;
+}
+
+.dark .diff-container .d2h-ins .d2h-code-line-ctn {
+  color: #aff5b4;
+}
+
+.dark .diff-container .d2h-info {
+  color: #79c0ff;
+}
