@@ -1,0 +1,412 @@
+<html lang="en" class="scroll-smooth bg-[#0a0a0f]"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | Blackbox</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #0a0a0f;
+color: #f4f4f5;
+}
+.font-mono {
+font-family: 'JetBrains Mono', monospace;
+}
+.fade-up {
+opacity: 0;
+transform: translateY(1rem);
+transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.bg-grid {
+background-size: 3rem 3rem;
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+</style></head>
+<body class="antialiased selection:bg-blue-500/30 selection:text-white relative overflow-x-hidden">
+
+    <!-- Background Accents -->
+    <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-full max-w-4xl h-[40vh] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute inset-0 bg-grid pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a0f]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-zinc-700 to-black border border-zinc-600 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.1)]"></div>
+                <span class="text-lg font-semibold tracking-tight text-white uppercase">BLACKBOX</span>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="workflow.html" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Workflow</a>
+                <a href="contract.html" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">The Contract</a>
+                <a href="getting-started.html" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Get Started</a>
+                <a href="https://github.com/elvisnm/blackbox" target="_blank" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-24">
+
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 text-center mt-12 mb-24 fade-up">
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 mb-6">
+                Get Started
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+                Set up Blackbox for your role in under 5 minutes.
+            </p>
+        </section>
+
+        <!-- Quick Start for DEV -->
+        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Quick Start for Developers</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Step 1 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">1</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Initialize Project</h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6 flex-grow">Install Blackbox into your project. This creates the <span class="text-zinc-300 font-mono text-sm">.blackbox/</span> folder and loads all 12 skills into <span class="text-zinc-300 font-mono text-sm">.claude/commands/</span>.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-blue-400">bbox init /path/to/your-project</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">2</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Set Asana Token</h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6 flex-grow">Required for <span class="font-mono text-sm text-zinc-300">/scaffold</span>, <span class="font-mono text-sm text-zinc-300">/refresh</span>, and <span class="font-mono text-sm text-zinc-300">/send-back</span>. Find this in Asana &gt; My Settings &gt; Apps &gt; Developer Apps.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-zinc-300"><span class="text-purple-400">export</span> ASANA_TOKEN=<span class="text-emerald-400">"your-token"</span></code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">3</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Add Repo <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6 flex-grow">Links your repository to the dashboard. This is auto-detected during initialization if a git remote exists.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox add-repo</span> owner/repo --branch main</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">4</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Set Author <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6 flex-grow">Maps your local work to your GitHub profile. Auto-detected from GitHub CLI or your local git config.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox set author</span> your-github-username</code>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- The .blackbox/ Folder Structure -->
+        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up delay-100">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">The .blackbox/ Folder</h2>
+
+            <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden mb-8 shadow-2xl">
+                <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    <span class="ml-4 text-xs font-medium text-zinc-500 font-mono">project-structure</span>
+                </div>
+                <div class="p-6 overflow-x-auto">
+<pre class="font-mono text-sm leading-relaxed text-zinc-400"><span class="text-blue-400 font-medium">your-project/</span>
+└── <span class="text-blue-400 font-medium">.blackbox/</span>
+    ├── <span class="text-blue-400 font-medium">blueprints/</span>
+    │   ├── <span class="text-zinc-500">_template.md</span>
+    │   ├── <span class="text-emerald-400 font-medium">feat/</span>
+    │   ├── <span class="text-orange-400 font-medium">fix/</span>
+    │   ├── <span class="text-purple-400 font-medium">improve/</span>
+    │   └── <span class="text-red-400 font-medium">hotfix/</span>
+    └── <span class="text-blue-400 font-medium">prs/</span>
+        ├── <span class="text-zinc-500">_template.md</span>
+        ├── <span class="text-emerald-400 font-medium">feat/</span>
+        ├── <span class="text-orange-400 font-medium">fix/</span>
+        ├── <span class="text-purple-400 font-medium">improve/</span>
+        ├── <span class="text-red-400 font-medium">hotfix/</span>
+        └── <span class="text-blue-400 font-medium">reviews/</span>
+</pre>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 rounded-xl border border-emerald-500/20 bg-emerald-900/10">
+                    <h4 class="text-base font-semibold text-emerald-400 mb-1">feat/</h4>
+                    <p class="text-sm text-zinc-400">New functionality and features.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-orange-500/20 bg-orange-900/10">
+                    <h4 class="text-base font-semibold text-orange-400 mb-1">fix/</h4>
+                    <p class="text-sm text-zinc-400">Bug fixes and error resolutions.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-purple-500/20 bg-purple-900/10">
+                    <h4 class="text-base font-semibold text-purple-400 mb-1">improve/</h4>
+                    <p class="text-sm text-zinc-400">Refactors and performance.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-red-500/20 bg-red-900/10">
+                    <h4 class="text-base font-semibold text-red-400 mb-1">hotfix/</h4>
+                    <p class="text-sm text-zinc-400">Urgent production fixes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blueprint Anatomy -->
+        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Blueprint Anatomy</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Asana Owned -->
+                <div class="p-8 rounded-2xl border border-orange-500/20 bg-orange-900/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[50px] pointer-events-none"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <iconify-icon icon="solar:document-text-linear" class="text-2xl text-orange-400"></iconify-icon>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Asana-Owned</h3>
+                    </div>
+                    <p class="text-sm text-zinc-400 mb-6">Generated instantly when running <span class="font-mono text-zinc-300">/scaffold</span>.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-orange-400 text-lg"></iconify-icon> Goal
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-orange-400 text-lg"></iconify-icon> Context
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-orange-400 text-lg"></iconify-icon> Requirements
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-orange-400 text-lg"></iconify-icon> UI / UX
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-orange-400 text-lg"></iconify-icon> Constraints
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DEV Owned -->
+                <div class="p-8 rounded-2xl border border-emerald-500/20 bg-emerald-900/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[50px] pointer-events-none"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <iconify-icon icon="solar:programming-linear" class="text-2xl text-emerald-400"></iconify-icon>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">DEV-Owned</h3>
+                    </div>
+                    <p class="text-sm text-zinc-400 mb-6">Fleshed out locally via <span class="font-mono text-zinc-300">/refine</span> and during implementation.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-emerald-400 text-lg"></iconify-icon> Codebase Context
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-emerald-400 text-lg"></iconify-icon> Implementation Plan
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-emerald-400 text-lg"></iconify-icon> Technical Decisions
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:check-circle-linear" class="text-emerald-400 text-lg"></iconify-icon> Validation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-5 rounded-xl bg-blue-500/5 border border-blue-500/20 flex items-start gap-4">
+                <iconify-icon icon="solar:info-circle-linear" class="text-xl text-blue-400 shrink-0 mt-0.5"></iconify-icon>
+                <p class="text-sm text-zinc-300 leading-relaxed">
+                    Blueprints carry only two links: the Asana ticket URL and the PR link. No status, no changelog — Asana handles all workflow tracking.
+                </p>
+            </div>
+        </section>
+
+        <!-- Setup Roles Grid -->
+        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Setup by Role</h2>
+
+            <div class="space-y-6">
+
+                <!-- PO Setup -->
+                <div class="p-6 md:p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                    <div class="flex items-center gap-3 mb-6">
+                        <iconify-icon icon="solar:user-linear" class="text-2xl text-orange-400"></iconify-icon>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Product Owner (PO)</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Clone the project repository (read-only context).
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Copy <span class="font-mono text-zinc-400">CLAUDE_PO.md</span> template to project root as <span class="font-mono text-zinc-400">CLAUDE.md</span>.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Configure Asana MCP with personal access token.
+                        </li>
+                    </ul>
+                    <div class="p-4 rounded-lg bg-black/40 border border-white/5 text-sm text-zinc-400">
+                        <strong class="text-white font-medium">Key Point:</strong> PO's Claude reads the codebase for context but writes only to Asana. Never touches the repo.
+                    </div>
+                </div>
+
+                <!-- Designer Setup -->
+                <div class="p-6 md:p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                    <div class="flex items-center gap-3 mb-6">
+                        <iconify-icon icon="solar:pen-new-square-linear" class="text-2xl text-purple-400"></iconify-icon>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Designer</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Clone repository and configure Asana token (same as PO).
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Copy <span class="font-mono text-zinc-400">CLAUDE_DESIGN.md</span> to project root as <span class="font-mono text-zinc-400">CLAUDE.md</span>.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-zinc-300">
+                            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-zinc-500 mt-0.5"></iconify-icon> Focus on UI components, styles, and pages in the "Where to Find Things" section.
+                        </li>
+                    </ul>
+                    <div class="p-4 rounded-lg bg-black/40 border border-white/5 text-sm text-zinc-400">
+                        <strong class="text-white font-medium">Key Point:</strong> Designer's Claude researches existing UI patterns and references components by name.
+                    </div>
+                </div>
+
+                <!-- QA Setup -->
+                <div class="p-6 md:p-8 rounded-2xl border border-emerald-500/10 bg-emerald-900/5 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+                    <div class="flex items-center gap-3">
+                        <iconify-icon icon="solar:shield-check-linear" class="text-2xl text-emerald-400"></iconify-icon>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">QA</h3>
+                    </div>
+                    <p class="text-sm text-zinc-300 sm:text-right max-w-xl">
+                        No Claude setup needed. QA works directly in Asana, testing against the acceptance criteria in the ticket.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dashboard Setup -->
+        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Dashboard Setup <span class="text-lg font-medium text-zinc-500 ml-2">(Optional)</span></h2>
+
+            <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden shadow-2xl">
+                <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    <span class="ml-4 text-xs font-medium text-zinc-500 font-mono">dashboard-init</span>
+                </div>
+                <div class="p-6 overflow-x-auto space-y-4">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 1. Install dependencies</span>
+                        <code class="font-mono text-sm text-zinc-300">cd blackbox/dashboard &amp;&amp; npm install</code>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 2. Add repos</span>
+                        <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox add-repo</span> owner/repo --branch main</code>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 3. Add GitHub token (Optional: increases API limit)</span>
+                        <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox set token</span> ghp_your-token</code>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 4. Run dashboard</span>
+                        <code class="font-mono text-sm text-zinc-300">npm run dev <span class="text-zinc-500">&rarr; opens at localhost:5173</span></code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-[#0a0a0f] py-8 relative z-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-5 h-5 rounded bg-zinc-800 border border-zinc-700"></div>
+                        <span class="text-sm font-semibold tracking-tighter text-zinc-400 uppercase">BLACKBOX</span>
+                    </a>
+                    <span class="text-zinc-800">|</span>
+                    <nav class="flex gap-4">
+                        <a href="workflow.html" class="text-xs text-zinc-500 hover:text-white transition-colors">Workflow</a>
+                        <a href="contract.html" class="text-xs text-zinc-500 hover:text-white transition-colors">The Contract</a>
+                        <a href="getting-started.html" class="text-xs text-zinc-500 hover:text-white transition-colors">Get Started</a>
+                        <a href="https://github.com/elvisnm/blackbox" target="_blank" class="text-xs text-zinc-500 hover:text-white transition-colors">GitHub</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4 text-xs text-zinc-600">
+                    <span>MIT License</span>
+                    <span class="text-zinc-800">|</span>
+                    <span>Designed and created by Elvis Moreira, March 2026</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body></html>

@@ -2,6 +2,8 @@
 
 A blueprint management system for AI-assisted software development.
 
+Designed and created by [Elvis Moreira](https://github.com/elvisnm) on March 7, 2026.
+
 ## The Idea
 
 Everyone on a team uses AI (Claude) in their workflow — PO, Designer, Developer. Blackbox creates a path where all of them work toward the same goal, connected through structured artifacts.
