@@ -65,22 +65,41 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                 Get Started
             </h1>
             <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-                Set up Blackbox for your role in under 5 minutes.
+                Set up Blackbox for your role in a few simple steps.
             </p>
         </section>
 
         <!-- Quick Start for DEV -->
-        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+        <section class="max-w-3xl mx-auto px-6 mb-32 fade-up">
             <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Quick Start for Developers</h2>
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-6">
 
                 <!-- Step 1 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">1</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Clone the Repository</h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6">Clone the Blackbox repository to your machine. This gives you the CLI, skills, and templates.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">git clone</span> https://github.com/elvisnm/blackbox.git</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">2</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Initialize Project</h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6 flex-grow">Install Blackbox into your project. This creates the <span class="text-zinc-300 font-mono text-sm">.blackbox/</span> folder and loads all 12 skills into <span class="text-zinc-300 font-mono text-sm">.claude/commands/</span>.</p>
+                    <p class="text-base text-zinc-400 mb-6">Install Blackbox into your project. This creates the <span class="text-zinc-300 font-mono text-sm">.blackbox/</span> folder and loads all 12 skills into <span class="text-zinc-300 font-mono text-sm">.claude/commands/</span>.</p>
                     <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -93,13 +112,13 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                <!-- Step 3 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">2</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">3</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Set Asana Token</h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6 flex-grow">Required for <span class="font-mono text-sm text-zinc-300">/scaffold</span>, <span class="font-mono text-sm text-zinc-300">/refresh</span>, and <span class="font-mono text-sm text-zinc-300">/send-back</span>. Find this in Asana &gt; My Settings &gt; Apps &gt; Developer Apps.</p>
+                    <p class="text-base text-zinc-400 mb-6">Required for <span class="font-mono text-sm text-zinc-300">/scaffold</span>, <span class="font-mono text-sm text-zinc-300">/refresh</span>, and <span class="font-mono text-sm text-zinc-300">/send-back</span>. Find this in Asana &gt; My Settings &gt; Apps &gt; Developer Apps.</p>
                     <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -112,13 +131,13 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     </div>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                <!-- Step 4 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">3</div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">4</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Add Repo <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6 flex-grow">Links your repository to the dashboard. This is auto-detected during initialization if a git remote exists.</p>
+                    <p class="text-base text-zinc-400 mb-6">Links your repository to the dashboard. This is auto-detected during initialization if a git remote exists.</p>
                     <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -131,13 +150,13 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     </div>
                 </div>
 
-                <!-- Step 4 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20 flex flex-col h-full">
+                <!-- Step 5 -->
+                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">4</div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">5</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Set Author <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6 flex-grow">Maps your local work to your GitHub profile. Auto-detected from GitHub CLI or your local git config.</p>
+                    <p class="text-base text-zinc-400 mb-6">Maps your local work to your GitHub profile. Auto-detected from GitHub CLI or your local git config.</p>
                     <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -154,7 +173,7 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         </section>
 
         <!-- The .blackbox/ Folder Structure -->
-        <section class="max-w-6xl mx-auto px-6 mb-32 fade-up delay-100">
+        <section class="max-w-3xl mx-auto px-6 mb-32 fade-up delay-100">
             <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">The .blackbox/ Folder</h2>
 
             <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden mb-8 shadow-2xl">
@@ -242,7 +261,7 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[50px] pointer-events-none"></div>
                     <div class="flex items-center gap-3 mb-6">
                         <iconify-icon icon="solar:programming-linear" class="text-2xl text-emerald-400"></iconify-icon>
-                        <h3 class="text-xl font-semibold tracking-tight text-white">DEV-Owned</h3>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Developer-Owned</h3>
                     </div>
                     <p class="text-sm text-zinc-400 mb-6">Fleshed out locally via <span class="font-mono text-zinc-300">/refine</span> and during implementation.</p>
                     <ul class="space-y-3">
@@ -296,6 +315,10 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     <div class="p-4 rounded-lg bg-black/40 border border-white/5 text-sm text-zinc-400">
                         <strong class="text-white font-medium">Key Point:</strong> PO's Claude reads the codebase for context but writes only to Asana. Never touches the repo.
                     </div>
+                    <div class="p-4 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm text-zinc-400 mt-4 flex items-start gap-3">
+                        <iconify-icon icon="solar:document-text-linear" class="text-orange-400 text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <p>Read the full <span class="font-mono text-orange-300">CLAUDE_PO.md</span> template at <a href="https://github.com/elvisnm/blackbox/blob/main/docs/claude-templates/CLAUDE_PO.md" target="_blank" class="text-orange-400 hover:text-orange-300 underline underline-offset-2">docs/claude-templates/CLAUDE_PO.md</a> for detailed instructions and prompts.</p>
+                    </div>
                 </div>
 
                 <!-- Designer Setup -->
@@ -317,6 +340,10 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     </ul>
                     <div class="p-4 rounded-lg bg-black/40 border border-white/5 text-sm text-zinc-400">
                         <strong class="text-white font-medium">Key Point:</strong> Designer's Claude researches existing UI patterns and references components by name.
+                    </div>
+                    <div class="p-4 rounded-lg bg-purple-500/5 border border-purple-500/20 text-sm text-zinc-400 mt-4 flex items-start gap-3">
+                        <iconify-icon icon="solar:document-text-linear" class="text-purple-400 text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <p>Read the full <span class="font-mono text-purple-300">CLAUDE_DESIGN.md</span> template at <a href="https://github.com/elvisnm/blackbox/blob/main/docs/claude-templates/CLAUDE_DESIGN.md" target="_blank" class="text-purple-400 hover:text-purple-300 underline underline-offset-2">docs/claude-templates/CLAUDE_DESIGN.md</a> for detailed instructions and prompts.</p>
                     </div>
                 </div>
 

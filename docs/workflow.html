@@ -83,11 +83,11 @@
                         </div>
                         <h3 class="text-2xl font-semibold tracking-tight text-white">Asana World</h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6">Where PO, Designer, and QA live. Tracks status, assignments, and notifications. This is the shared space everyone sees.</p>
+                    <p class="text-base text-zinc-400 mb-6">Where Product Owner, Designer, and QA live. Tracks status, assignments, and notifications. This is the shared space everyone sees.</p>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3 text-base text-zinc-300">
                             <i data-lucide="user" class="w-5 h-5 mt-0.5 text-orange-400 shrink-0"></i>
-                            <span><strong class="font-medium text-white">PO</strong> creates structured tickets with Claude</span>
+                            <span><strong class="font-medium text-white">Product Owner</strong> creates structured tickets with Claude</span>
                         </li>
                         <li class="flex items-start gap-3 text-base text-zinc-300">
                             <i data-lucide="pen-tool" class="w-5 h-5 mt-0.5 text-purple-400 shrink-0"></i>
@@ -150,66 +150,83 @@
 
         <!-- Asana Status Flow -->
         <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
-            <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Asana Status Flow</h2>
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-4 text-center">Ticket Lifecycle</h2>
+            <p class="text-base text-zinc-400 mb-10 max-w-3xl mx-auto leading-relaxed text-center">
+                Every ticket in Asana moves through a sequence of statuses. Each status represents a clear handoff — when a ticket changes status, a different role picks it up. No one has to ask "is this ready?" or "whose turn is it?" The status tells you.
+            </p>
 
-            <!-- Status Pills Visualization -->
-            <div class="flex flex-wrap items-center gap-2 mb-10 p-6 rounded-xl border border-white/5 bg-zinc-900/30">
-                <!-- PO -->
-                <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Draft</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
-                <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Refining</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
-                <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Ready for Design</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+            <!-- Full Status Chain -->
+            <div class="mb-12">
+                <h3 class="text-lg font-medium text-zinc-300 mb-4 text-center">All Statuses</h3>
+                <div class="flex flex-wrap items-center justify-center gap-2 p-6 rounded-xl border border-white/5 bg-zinc-900/30">
+                    <!-- PO -->
+                    <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Draft</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Refining</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Ready for Design</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
 
-                <!-- DESIGN -->
-                <div class="px-3 py-1.5 rounded-full border border-purple-700/50 bg-purple-900/30 text-sm font-medium text-purple-300">Designing</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <!-- DESIGN -->
+                    <div class="px-3 py-1.5 rounded-full border border-purple-700/50 bg-purple-900/30 text-sm font-medium text-purple-300">Designing</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
 
-                <!-- PO -->
-                <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Ready for Dev</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <!-- PO -->
+                    <div class="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800 text-sm font-medium text-zinc-300">Ready for Dev</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
 
-                <!-- DEV -->
-                <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">In Progress</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
-                <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">PR Review</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
-                <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">Ready to Test</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <!-- DEV -->
+                    <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">In Progress</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">PR Review</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <div class="px-3 py-1.5 rounded-full border border-blue-700/50 bg-blue-900/30 text-sm font-medium text-blue-300">Ready to Test</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
 
-                <!-- QA -->
-                <div class="px-3 py-1.5 rounded-full border border-emerald-700/50 bg-emerald-900/30 text-sm font-medium text-emerald-300">Testing</div>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
-                <div class="px-3 py-1.5 rounded-full border border-emerald-700/50 bg-emerald-900/30 text-sm font-medium text-emerald-300 flex items-center gap-1">
-                    <i data-lucide="check" class="w-3.5 h-3.5"></i> Done
+                    <!-- QA -->
+                    <div class="px-3 py-1.5 rounded-full border border-emerald-700/50 bg-emerald-900/30 text-sm font-medium text-emerald-300">Testing</div>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600"></i>
+                    <div class="px-3 py-1.5 rounded-full border border-emerald-700/50 bg-emerald-900/30 text-sm font-medium text-emerald-300 flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5"></i> Done
+                    </div>
                 </div>
+                <p class="text-sm text-zinc-500 mt-3 text-center">Colors indicate ownership: <span class="text-zinc-300">gray</span> = Product Owner, <span class="text-purple-300">purple</span> = Design, <span class="text-blue-300">blue</span> = Developer, <span class="text-emerald-300">green</span> = QA.</p>
             </div>
 
-            <!-- Flow Shortcuts -->
+            <!-- Three Paths -->
+            <div class="mb-6">
+                <h3 class="text-lg font-medium text-zinc-300 mb-2 text-center">Not Every Ticket Takes the Same Path</h3>
+                <p class="text-base text-zinc-400 mb-6 max-w-3xl mx-auto leading-relaxed text-center">
+                    The statuses above are all the possible steps. In practice, tickets skip steps depending on what's needed. A backend API fix doesn't need design. A production hotfix can't wait for refinement. Here are the three paths a ticket can take:
+                </p>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
-                    <h4 class="text-base font-medium text-white mb-4 flex items-center gap-2">
-                        <i data-lucide="layout-template" class="w-5 h-5 text-zinc-500"></i> Standard (With Design)
+                    <h4 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="layout-template" class="w-5 h-5 text-zinc-500"></i> Standard
                     </h4>
+                    <p class="text-sm text-zinc-500 mb-4">Features with UI changes. Goes through all roles.</p>
                     <p class="text-sm text-zinc-400 leading-relaxed">
-                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> Refining <span class="text-zinc-600 mx-1">&rarr;</span> Ready for Design <span class="text-zinc-600 mx-1">&rarr;</span> Designing <span class="text-zinc-600 mx-1">&rarr;</span> Ready for Dev <span class="text-zinc-600 mx-1">&rarr;</span> In Progress...
+                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> Refining <span class="text-zinc-600 mx-1">&rarr;</span> Ready for Design <span class="text-zinc-600 mx-1">&rarr;</span> Designing <span class="text-zinc-600 mx-1">&rarr;</span> Ready for Dev <span class="text-zinc-600 mx-1">&rarr;</span> In Progress <span class="text-zinc-600 mx-1">&rarr;</span> PR Review <span class="text-zinc-600 mx-1">&rarr;</span> Ready to Test <span class="text-zinc-600 mx-1">&rarr;</span> Testing <span class="text-zinc-600 mx-1">&rarr;</span> Done
                     </p>
                 </div>
                 <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
-                    <h4 class="text-base font-medium text-white mb-4 flex items-center gap-2">
-                        <i data-lucide="zap" class="w-5 h-5 text-zinc-500"></i> Fast Track (No Design)
+                    <h4 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i> Fast Track
                     </h4>
+                    <p class="text-sm text-zinc-500 mb-4">Backend work, bug fixes, or anything without UI. Skips design.</p>
                     <p class="text-sm text-zinc-400 leading-relaxed">
-                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> Refining <span class="text-zinc-600 mx-1">&rarr;</span> <span class="text-white">Ready for Dev</span> <span class="text-zinc-600 mx-1">&rarr;</span> In Progress...
+                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> Refining <span class="text-zinc-600 mx-1">&rarr;</span> <span class="text-white font-medium">Ready for Dev</span> <span class="text-zinc-600 mx-1">&rarr;</span> In Progress <span class="text-zinc-600 mx-1">&rarr;</span> PR Review <span class="text-zinc-600 mx-1">&rarr;</span> Ready to Test <span class="text-zinc-600 mx-1">&rarr;</span> Testing <span class="text-zinc-600 mx-1">&rarr;</span> Done
                     </p>
                 </div>
-                <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
-                    <h4 class="text-base font-medium text-white mb-4 flex items-center gap-2">
+                <div class="p-6 rounded-xl border border-red-500/10 bg-red-900/5">
+                    <h4 class="text-base font-medium text-white mb-2 flex items-center gap-2">
                         <i data-lucide="flame" class="w-5 h-5 text-red-400"></i> Hotfix
                     </h4>
+                    <p class="text-sm text-zinc-500 mb-4">Production is broken. Skip refinement and design — go straight to code.</p>
                     <p class="text-sm text-zinc-400 leading-relaxed">
-                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> <span class="text-white">In Progress</span> <span class="text-zinc-600 mx-1">&rarr;</span> PR Review <span class="text-zinc-600 mx-1">&rarr;</span> Ready to Test <span class="text-zinc-600 mx-1">&rarr;</span> Done
+                        Draft <span class="text-zinc-600 mx-1">&rarr;</span> <span class="text-white font-medium">In Progress</span> <span class="text-zinc-600 mx-1">&rarr;</span> PR Review <span class="text-zinc-600 mx-1">&rarr;</span> Ready to Test <span class="text-zinc-600 mx-1">&rarr;</span> Done
                     </p>
                 </div>
             </div>
@@ -293,7 +310,7 @@
                 <!-- Right: DEV Skill Flow -->
                 <div class="fade-up delay-100">
                     <h2 class="text-3xl font-semibold tracking-tight text-white mb-4">Developer Sequence</h2>
-                    <p class="text-base text-zinc-400 mb-10">The full command flow from Asana ticket to GitHub PR.</p>
+                    <p class="text-base text-zinc-400 mb-10">The full command flow from Asana ticket to GitHub Pull Request.</p>
 
                     <div class="relative border-l border-zinc-800 ml-4 pb-4 space-y-8">
 
@@ -342,6 +359,31 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Closing: Why This Works -->
+        <section class="max-w-4xl mx-auto px-6 mb-16 fade-up">
+            <div class="p-8 md:p-12 rounded-2xl border border-white/10 bg-gradient-to-b from-zinc-900/40 to-transparent text-center relative overflow-hidden">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/5 blur-[80px] pointer-events-none"></div>
+                <h2 class="text-3xl font-semibold tracking-tight text-white mb-6">Everyone Moves Forward</h2>
+                <p class="text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-8">
+                    The workflow isn't about adding process — it's about removing confusion. Each role knows exactly when their work starts, what they need to deliver, and when they're done. Send-backs catch problems early. Skills automate the handoffs. Nothing falls through the cracks.
+                </p>
+                <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                    <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                        <p class="text-2xl font-semibold text-white mb-1">Product Owner<br>defines</p>
+                        <p class="text-sm text-zinc-500">the what and why</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                        <p class="text-2xl font-semibold text-white mb-1">Designer<br>shapes</p>
+                        <p class="text-sm text-zinc-500">the how it looks</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                        <p class="text-2xl font-semibold text-white mb-1">Developer<br>builds</p>
+                        <p class="text-sm text-zinc-500">with full context</p>
+                    </div>
+                </div>
             </div>
         </section>
 
