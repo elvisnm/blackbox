@@ -1,3 +1,8 @@
+---
+name: blueprint-refresh
+description: Update a blueprint from its linked Asana ticket after a send-back. Use when user says "refresh blueprint", "sync from Asana", or "pull latest from Asana".
+---
+
 Update a blueprint from its linked Asana ticket after a send-back.
 
 ## Input

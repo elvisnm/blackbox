@@ -1,3 +1,8 @@
+---
+name: blueprint-start
+description: Review a blueprint summary and prepare for development. Use when user says "start work", "begin implementation", or "show blueprint summary".
+---
+
 Prepare a blueprint for development.
 
 When user says "start" followed by a blueprint path.

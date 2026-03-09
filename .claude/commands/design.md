@@ -1,3 +1,8 @@
+---
+name: ticket-design
+description: Fill the UI/UX section of an Asana ticket with component references from the codebase. Use when user says "design ticket", "fill UI/UX", or "add component specs".
+---
+
 Fill the UI/UX section of an Asana ticket with component references from the codebase.
 
 ## Input

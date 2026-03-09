@@ -1,3 +1,8 @@
+---
+name: blueprint-status
+description: List blueprints with progress counts and completion status. Use when user says "status", "show blueprints", "what's in progress", or "blueprint progress".
+---
+
 Show the status of blueprints.
 
 ## Input

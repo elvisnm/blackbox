@@ -1,3 +1,8 @@
+---
+name: blueprint-refine
+description: Research the target project's codebase and fill technical context into a blueprint. Use when user says "refine", "research codebase", or "fill implementation plan".
+---
+
 Refine a blueprint by researching the target project's codebase.
 
 ## Input

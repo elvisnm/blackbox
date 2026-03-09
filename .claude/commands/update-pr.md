@@ -1,3 +1,8 @@
+---
+name: github-update-pr
+description: Update an existing GitHub PR title and body from the PR document. Use when user says "update PR", "sync PR", or "refresh pull request".
+---
+
 Update an existing GitHub pull request from a PR document.
 
 When user says "update pr" or "update the pr".

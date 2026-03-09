@@ -1,3 +1,8 @@
+---
+name: ticket-refine
+description: Improve an existing Asana ticket by adding code-grounded details. Use when user says "refine ticket", "improve ticket", or "strengthen requirements".
+---
+
 Improve an existing Asana ticket based on codebase research.
 
 ## Input

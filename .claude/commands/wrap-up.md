@@ -1,3 +1,8 @@
+---
+name: dev-wrap-up
+description: Clean code, run linting, generate commit message, and create PR document. Use when user says "wrap up", "finish", "prepare for PR", or "clean up code".
+---
+
 Wrap up work, clean code, and prepare for PR.
 
 When user says "wrap up", "finish", or "wrap it up".

@@ -1,3 +1,8 @@
+---
+name: ticket-review
+description: Validate an Asana ticket against quality gates before marking it ready. Use when user says "review ticket", "check ticket quality", or "is this ticket ready?".
+---
+
 Validate an Asana ticket against quality gates before marking it ready.
 
 ## Input

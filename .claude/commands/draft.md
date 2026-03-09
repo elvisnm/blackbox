@@ -1,3 +1,8 @@
+---
+name: ticket-draft
+description: Create a new Asana ticket using the contract template, grounded in codebase reality. Use when user says "draft ticket", "new ticket", "create Asana task", or "write requirements".
+---
+
 Create a new Asana ticket using the contract template.
 
 ## Input

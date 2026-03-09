@@ -1,3 +1,8 @@
+---
+name: blueprint-scaffold
+description: Generate a blueprint from an Asana ticket URL. Use when user says "scaffold", "create blueprint from Asana", or pastes an Asana task URL to start a new blueprint.
+---
+
 Generate a blueprint from an Asana ticket.
 
 ## Input

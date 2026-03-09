@@ -1,3 +1,8 @@
+---
+name: github-create-pr
+description: Create a GitHub pull request from a PR document in .blackbox/prs/. Use when user says "create PR", "open pull request", or "push PR to GitHub".
+---
+
 Create a GitHub pull request from a PR document.
 
 When user says "create pr" or "open pr".

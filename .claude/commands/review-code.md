@@ -1,3 +1,8 @@
+---
+name: code-review-self
+description: Self-review changed files against quality checklist before committing. Use when user says "review code", "check my changes", or "self-review".
+---
+
 Self-review of your own work before committing.
 
 ## Input

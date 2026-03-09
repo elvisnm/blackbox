@@ -1,3 +1,8 @@
+---
+name: blueprint-implement
+description: Execute a blueprint's implementation plan task-by-task with Beads tracking. Use when user says "implement", "start coding", or "execute the plan".
+---
+
 Execute a blueprint's implementation plan using Beads for task tracking.
 
 ## Input

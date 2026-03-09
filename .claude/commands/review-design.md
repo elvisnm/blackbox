@@ -1,3 +1,8 @@
+---
+name: design-review
+description: Validate design specs against existing components and patterns in the codebase. Use when user says "review design", "validate UI/UX", or "check design spec".
+---
+
 Validate design specs against existing components and patterns in the codebase.
 
 ## Input

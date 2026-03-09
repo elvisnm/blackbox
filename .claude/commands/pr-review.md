@@ -1,3 +1,8 @@
+---
+name: pr-review
+description: Review someone else's pull request with structured feedback. Use when user says "review PR", "review this branch", or provides a PR URL/number for review.
+---
+
 Review someone else's pull request.
 
 When user says "new review" or "review pr".

@@ -1,3 +1,8 @@
+---
+name: ticket-send-back
+description: Return an Asana ticket to PO or DESIGN when blocked. Use when user says "send back", "escalate to PO", "needs redesign", or "ticket needs work".
+---
+
 Send a ticket back to PO or DESIGN via Asana.
 
 ## Input
