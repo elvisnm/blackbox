@@ -15,6 +15,8 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
 Read `.blackbox/blueprints/{type}/{name}.md`. If the file doesn't exist, list available blueprints and ask the user to pick one.
 
+Validate the blueprint structure by running `bash .claude/scripts/validate-blueprint.sh {blueprint-path}`. If critical sections (Implementation Plan) are missing, suggest running `/refine` first.
+
 ### 2. Find the Next Phase
 
 Parse the `## Implementation Plan` section. For each `### Phase N: {name}` subsection:

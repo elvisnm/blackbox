@@ -13,7 +13,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 
 ## Instructions
 
-1. **Extract the Asana task ID** from the URL. The task ID is the last numeric segment.
+1. **Extract the Asana task ID** by running `bash .claude/scripts/parse-asana-url.sh {url}`. This returns JSON with `task_id` and optionally `project_id`.
 
 2. **Fetch the Asana task** using the Asana MCP tools:
    - Get the task details (name, notes, custom fields, assignee, tags, memberships)

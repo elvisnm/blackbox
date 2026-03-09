@@ -13,16 +13,18 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
 1. **Read the blueprint** from `.blackbox/blueprints/{type}/{name}.md` (add `.md` if missing).
 
-2. **The project codebase is the current repo.** Since `.blackbox/blueprints/` lives inside the project, Claude already has access to the full codebase.
+2. **Validate the blueprint structure** by running `bash .claude/scripts/validate-blueprint.sh {blueprint-path}`. If sections are missing, fix them before proceeding.
 
-3. **Read the blueprint** to understand:
+3. **The project codebase is the current repo.** Since `.blackbox/blueprints/` lives inside the project, Claude already has access to the full codebase.
+
+4. **Read the blueprint** to understand:
    - The Goal
    - The Context (background, current/desired behavior)
    - The Requirements
    - The Constraints
    - Any already-filled Codebase Context (from a previous refine)
 
-4. **Research the codebase** — this is the core of refinement:
+5. **Research the codebase** — this is the core of refinement:
 
    a. **Identify the tech stack**: Check for package.json, Cargo.toml, go.mod, etc. Note language, framework, key libraries.
 
@@ -38,7 +40,7 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
    e. **Identify edge cases**: Based on the codebase structure, flag edge cases the blueprint should address.
 
-5. **Update the blueprint** with findings:
+6. **Update the blueprint** with findings:
 
    - **Codebase Context > Related Files**: List each relevant file with a brief description of why it matters
    - **Codebase Context > Dependencies**: List internal modules and external packages
@@ -46,7 +48,7 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
    - **Implementation Plan**: Draft phased steps based on the codebase structure. Mark each step as `[deterministic]` (exact action) or `[agentic]` (requires judgment).
    - **Validation**: Fill in tests to write, manual verification steps, and lint/type commands from the project
 
-6. **Present the changes** to the user:
+7. **Present the changes** to the user:
    - Summarize what you found in the codebase
    - Highlight the suggested approach and ask if it aligns with their vision
    - Flag any open questions or decisions needed

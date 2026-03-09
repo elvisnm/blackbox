@@ -22,22 +22,25 @@ The user provides: $ARGUMENTS (optional -- blueprint path like `feat/dashboard`)
 ### 2. Read the PR Document
 Read the file from `.blackbox/prs/{type}/{name}.md`.
 
-### 3. Parse the Document
+### 3. Validate the PR Document
+Run `bash .claude/scripts/validate-pr-doc.sh {pr-doc-path}` to check required sections and title prefix. Fix any issues before proceeding.
+
+### 4. Parse the Document
 Extract:
 - **Title**: The text under the `# Title` heading (first H1). This becomes the `--title` for `gh pr create`. Do NOT include it in the body. Apply title prefix and body formatting rules from `references/pr-conventions.md`.
 - **Body**: Everything from `## Type of change` onward. Apply heading icons and body rules from `references/pr-conventions.md`.
 
-### 4. Ensure Branch is Pushed
+### 5. Ensure Branch is Pushed
 - Check if the current branch has an upstream: `git rev-parse --abbrev-ref @{upstream}`
 - If not pushed, push with: `git push -u origin HEAD`
 
-### 5. Determine Base Branch and Reviewers
+### 6. Determine Base Branch and Reviewers
 - Ask the user:
   - "What's the base branch?" (common: `main`, `canary`, `develop`)
   - "Who should review?" (GitHub usernames, comma-separated)
 - Remember these for future use in the session
 
-### 6. Create the PR
+### 7. Create the PR
 ```bash
 gh pr create \
   --base <base-branch> \
@@ -49,11 +52,11 @@ gh pr create \
 
 Use a HEREDOC for the body to preserve markdown formatting.
 
-### 7. Update Blueprint PR Link
+### 8. Update Blueprint PR Link
 - Read the blueprint from `.blackbox/blueprints/{type}/{name}.md`
 - Update the `> **PR:**` field from `_pending_` to the new PR URL
 
-### 8. Confirm
+### 9. Confirm
 - Show the PR URL to the user
 - Confirm reviewers and assignee were set
 - Confirm blueprint PR link was updated

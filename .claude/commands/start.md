@@ -16,7 +16,9 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 1. **Read the blueprint** from `.blackbox/blueprints/{type}/{name}.md` (add `.md` if missing).
    - If the file doesn't exist, list available blueprints and ask the user to pick one.
 
-2. **Show a summary**:
+2. **Check progress** by running `bash .claude/scripts/check-progress.sh {blueprint-path}` to get JSON counts for requirements, implementation, and validation.
+
+3. **Show a summary**:
 
    ```
    Starting: {type}/{blueprint-name}
@@ -41,9 +43,9 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
    - **Implementation Plan**: Count `- [x]` and `- [ ]` lines in `## Implementation Plan`, grouped by `### Phase` subsections
    - **Validation**: Count `- [x]` and `- [ ]` lines in the `### Tests` subsection of `## Validation`
 
-3. **If the blueprint has no Implementation Plan**, suggest running `/refine {type}/{name}` first.
+4. **If the blueprint has no Implementation Plan**, suggest running `/refine {type}/{name}` first.
 
-4. **Do NOT start implementing**. That is `/implement`'s job. `/start` only shows context and prepares the developer.
+5. **Do NOT start implementing**. That is `/implement`'s job. `/start` only shows context and prepares the developer.
 
 ## Troubleshooting
 

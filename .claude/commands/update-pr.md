@@ -23,7 +23,8 @@ The user provides: $ARGUMENTS (optional -- blueprint path like `feat/dashboard`)
 - Get the PR for the current branch: `gh pr view --json number,title,url`
 - If no PR exists, tell the user and suggest running `/create-pr` instead
 
-### 3. Read and Parse the Document
+### 3. Validate and Parse the Document
+Run `bash .claude/scripts/validate-pr-doc.sh {pr-doc-path}` to check required sections and title prefix. Fix any issues before proceeding.
 Read the file from `.blackbox/prs/{type}/{name}.md`.
 
 Extract:

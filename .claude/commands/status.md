@@ -23,19 +23,7 @@ This can be:
    - Asana link (from `> **Asana:**`)
    - PR link (from `> **PR:**`)
 
-3. **Parse progress counts** for each blueprint:
-
-   ### Requirements
-   Count lines matching `- [x]` and `- [ ]` inside the `## Requirements` section (stop at the next `##` heading).
-
-   ### Implementation Plan
-   For each `### Phase N: {name}` subsection inside `## Implementation Plan`:
-   - Count `- [x]` (done) and `- [ ]` (pending) lines
-   - Track per-phase: `Phase N ({name}): done/total`
-   - Sum across all phases for the total
-
-   ### Validation > Tests
-   Count `- [x]` and `- [ ]` inside the `### Tests` subsection of `## Validation`.
+3. **Parse progress counts** for each blueprint by running `bash .claude/scripts/check-progress.sh {blueprint-path}`. This outputs JSON with counts for requirements, implementation, and validation sections.
 
 4. **Display based on input**:
 
