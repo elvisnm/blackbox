@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BackgroundAccents from '../components/BackgroundAccents.astro';
+
+interface Props {
+  title: string;
+  currentPage?: string;
+}
+
+const { title, currentPage } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth bg-[#0a0a0f]">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <slot name="head" />
+</head>
+<body class="antialiased selection:bg-blue-500/30 selection:text-white relative overflow-x-hidden">
+    <BackgroundAccents />
+    <Nav currentPage={currentPage} />
+
+    <main class="relative z-10 pt-24 pb-24">
+        <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Scroll Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Blackbox | AI-Assisted Development Framework">
+    <Fragment slot="head">
+        <style>
+            .rotating-wrapper {
+                display: inline-block;
+                position: relative;
+            }
+            #rotating-word {
+                display: inline;
+                font-family: 'JetBrains Mono', monospace;
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 0.25rem;
+                padding: 0.1rem 0.4rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            #rotating-word.typing::after {
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 1.3em;
+                background: rgba(255, 255, 255, 0.6);
+                margin-left: 2px;
+                vertical-align: middle;
+                animation: blink-caret 0.6s step-end infinite;
+            }
+            #rotating-word.strike {
+                text-decoration: line-through;
+                text-decoration-color: rgba(255, 255, 255, 0.4);
+                opacity: 0.5;
+            }
+            @keyframes blink-caret {
+                50% { opacity: 0; }
+            }
+            .rotating-tooltip {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%) translateY(4px);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                white-space: nowrap;
+                font-size: 0.75rem;
+                color: #a1a1aa;
+                background: #18181b;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 0.5rem;
+                padding: 0.35rem 0.75rem;
+                margin-bottom: 0.25rem;
+            }
+            .rotating-tooltip.show,
+            .rotating-wrapper:hover .rotating-tooltip {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        </style>
+    </Fragment>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 mt-12 mb-32">
+
+        <!-- Title & Subtitle -->
+        <div class="text-center mb-12 fade-up">
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 mb-10">
+                Blackbox
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+                A development <span class="rotating-wrapper"><span class="rotating-tooltip">Yeah! I still don't know how to call it.</span><span id="rotating-word" class="typing"></span></span> for AI-assisted teams.
+            </p>
+            <p class="text-sm md:text-base text-zinc-500 max-w-xl mx-auto mt-3">
+                Skills combined into a workflow that helps your team plan, build, and ship together.
+            </p>
+        </div>
+
+        <!-- Stepped Layout -->
+        <div class="relative max-w-6xl mx-auto px-6 mb-10">
+            <!-- Connecting Line (Mobile: Vertical) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-[1.5rem] bottom-0 w-[2px] bg-gradient-to-b from-transparent via-white/30 to-transparent md:hidden z-0"></div>
+            <!-- Connecting Line (Desktop: Horizontal) -->
+            <div class="hidden md:block absolute top-[1.75rem] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent z-0"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 lg:gap-8 relative z-10">
+                <!-- Step 1 -->
+                <div class="relative flex flex-col items-center gap-4 group fade-up delay-100">
+                    <div class="relative z-10 w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-[#0a0a0f] border border-red-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+                        <iconify-icon icon="solar:link-broken-linear" class="text-2xl text-red-400"></iconify-icon>
+                    </div>
+                    <h3 class="relative z-10 text-[11px] sm:text-xs font-mono font-medium text-red-400/90 uppercase tracking-wider bg-[#0a0a0f] px-4 py-1.5 rounded-full border border-red-500/20 shadow-[0_0_10px_rgba(239,68,68,0.1)]">The Problem</h3>
+
+                    <div class="relative z-10 flex-1 w-full p-6 lg:p-8 rounded-2xl bg-[#140e0e] border border-red-500/10 hover:border-red-500/20 transition-colors overflow-hidden text-center">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-[50px] pointer-events-none"></div>
+                        <h4 class="text-xl font-semibold tracking-tight text-white mb-3">AI without alignment</h4>
+                        <ul class="text-sm text-zinc-400 leading-relaxed space-y-2 mb-4">
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span class="text-orange-400 font-medium">Product Owners</span> use AI to write</li>
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span class="text-purple-400 font-medium">Designers</span> use AI to spec interfaces</li>
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span class="text-emerald-400 font-medium">Developers</span> use AI to write code</li>
+                        </ul>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Each one talks to AI on their own terms. Different prompts, different context, different assumptions. Every output carries its own version of the truth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex flex-col items-center gap-4 group fade-up delay-200">
+                    <div class="relative z-10 w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-[#0a0a0f] border border-emerald-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                        <iconify-icon icon="solar:document-text-linear" class="text-2xl text-emerald-400"></iconify-icon>
+                    </div>
+                    <h3 class="relative z-10 text-[11px] sm:text-xs font-mono font-medium text-emerald-400/90 uppercase tracking-wider bg-[#0a0a0f] px-4 py-1.5 rounded-full border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">The Bridge</h3>
+
+                    <div class="relative z-10 flex-1 w-full p-6 lg:p-8 rounded-2xl bg-[#0b1410] border border-emerald-500/10 hover:border-emerald-500/20 transition-colors overflow-hidden text-center">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[50px] pointer-events-none"></div>
+                        <h4 class="text-xl font-semibold tracking-tight text-white mb-4 relative z-10">The contract between roles</h4>
+                        <ul class="text-sm text-zinc-400 leading-relaxed space-y-2 mb-4 relative z-10 text-left">
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span><span class="text-orange-400 font-medium">Product Owner</span> writes tickets grounded in the actual codebase</span></li>
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span><span class="text-purple-400 font-medium">Designer</span> shapes the interface using the PO's ticket as the single source of truth</span></li>
+                            <li class="flex items-start gap-2"><span class="text-zinc-600 mt-0.5">&bull;</span> <span><span class="text-emerald-400 font-medium">Developer</span> generates a Blueprint from the ticket — a recipe with all the context needed to plan and drive the implementation</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex flex-col items-center gap-4 group fade-up delay-300">
+                    <div class="relative z-10 w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-[#0a0a0f] border border-blue-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="text-2xl text-blue-400"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M14 12a6 6 0 1 1-6-6"></path><path d="M10 12a6 6 0 1 1 6 6"></path></g></svg>
+                    </div>
+                    <h3 class="relative z-10 text-[11px] sm:text-xs font-mono font-medium text-blue-400/90 uppercase tracking-wider bg-[#0a0a0f] px-4 py-1.5 rounded-full border border-blue-500/20 shadow-[0_0_10px_rgba(59,130,246,0.1)]">The Flow</h3>
+
+                    <div class="relative z-10 flex-1 w-full p-6 lg:p-8 rounded-2xl bg-[#0b101c] border border-blue-500/10 hover:border-blue-500/20 transition-colors overflow-hidden text-center">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] pointer-events-none"></div>
+                        <h4 class="text-xl font-semibold tracking-tight text-white mb-3">Skills to guide every step</h4>
+                        <ul class="text-sm text-zinc-400 leading-relaxed space-y-2 mb-4 inline-block text-left">
+                            <li class="flex items-start gap-2"><span class="text-cyan-500/60 mt-0.5">&bull;</span> <span class="text-cyan-300/70">Refining</span></li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-500/60 mt-0.5">&bull;</span> <span class="text-cyan-300/70">Implementing</span></li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-500/60 mt-0.5">&bull;</span> <span class="text-cyan-300/70">Reviewing</span></li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-500/60 mt-0.5">&bull;</span> <span class="text-cyan-300/70">Shipping</span></li>
+                        </ul>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Every step guided by skills that keep the AI aligned with what was actually agreed on.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Closing Line -->
+        <div class="text-center max-w-3xl mx-auto px-6 mb-6 fade-up">
+            <p class="text-sm md:text-base text-zinc-500 leading-relaxed">
+                No new tools. One source of truth, from the draft to the final pull request. Blackbox is just the structure that connects them.
+            </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 px-6 mb-32 fade-up">
+            <a href="/getting-started.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.12] border border-white/10 hover:border-white/20 text-white text-sm font-semibold transition-all flex items-center justify-center gap-2">
+                Get Started
+                <iconify-icon icon="solar:arrow-right-linear" class="text-zinc-400"></iconify-icon>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- How It Works Flow -->
+    <section class="max-w-6xl mx-auto px-6 mb-32">
+        <div class="text-center mb-16 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-4">How It Works</h2>
+            <p class="text-base text-zinc-400 max-w-2xl mx-auto">The full journey from ticket to shipped code, across every role.</p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Connecting Line (Desktop) -->
+            <div class="hidden md:block absolute top-[45%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
+                <!-- Step 1: PO -->
+                <div class="flex flex-row md:flex-col items-start md:items-center gap-4 text-left md:text-center fade-up">
+                    <div class="w-12 h-12 shrink-0 rounded-full border border-orange-500/30 bg-orange-900/20 flex items-center justify-center z-10 relative">
+                        <iconify-icon icon="solar:ticket-linear" class="text-xl text-orange-400"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-orange-400 mb-1">1. Ticket</h4>
+                        <p class="text-xs text-zinc-500">Product Owner writes tickets grounded in the actual codebase</p>
+                    </div>
+                </div>
+                <!-- Step 2: Design -->
+                <div class="flex flex-row md:flex-col items-start md:items-center gap-4 text-left md:text-center fade-up delay-100">
+                    <div class="w-12 h-12 shrink-0 rounded-full border border-purple-500/30 bg-purple-900/20 flex items-center justify-center z-10 relative">
+                        <iconify-icon icon="solar:pen-new-square-linear" class="text-xl text-purple-400"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-purple-400 mb-1">2. Design</h4>
+                        <p class="text-xs text-zinc-500">Designer shapes the interface using the PO's ticket as source of truth</p>
+                    </div>
+                </div>
+                <!-- Step 3: Scaffold -->
+                <div class="flex flex-row md:flex-col items-start md:items-center gap-4 text-left md:text-center fade-up delay-200">
+                    <div class="w-12 h-12 shrink-0 rounded-full border border-emerald-500/30 bg-emerald-900/20 flex items-center justify-center z-10 relative shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                        <iconify-icon icon="solar:code-square-linear" class="text-xl text-emerald-400"></iconify-icon>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-emerald-400 mb-1">3. Blueprint</h4>
+                        <p class="text-xs text-zinc-500">Developer generates a Blueprint with all the context to plan the implementation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills note -->
+        <div class="text-center mt-10 fade-up">
+            <p class="text-base text-zinc-400">From the Blueprint, skills guide the developer through building, reviewing, and shipping — all the way to the pull request.</p>
+        </div>
+
+        <!-- Link to full workflow -->
+        <div class="text-center mt-12 fade-up">
+            <a href="/workflow.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.08] hover:bg-white/[0.12] border border-white/10 hover:border-white/20 text-white text-sm font-semibold transition-all">
+                Explore the full workflow
+                <iconify-icon icon="solar:arrow-right-linear" class="text-zinc-400"></iconify-icon>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- What It Provides (Grid) -->
+    <section class="max-w-6xl mx-auto px-6 mb-32">
+        <h2 class="text-3xl font-semibold tracking-tight text-white mb-10 fade-up text-center">Framework Architecture</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors group fade-up">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:document-text-linear" class="text-lg"></iconify-icon>
+                    </div>
+                    <h4 class="text-base font-medium text-white">Blueprint Template</h4>
+                </div>
+                <p class="text-sm text-zinc-400">The standardized Markdown structure that defines the feature, scope, technical plan, and testing strategy living alongside the code.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors group fade-up delay-100">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:command-linear" class="text-lg"></iconify-icon>
+                    </div>
+                    <h4 class="text-base font-medium text-white">Skills</h4>
+                </div>
+                <p class="text-sm text-zinc-400">A suite of command-line tools to scaffold, refine, review, and wrap-up blueprints, connecting local context with Claude's API.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors group fade-up">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-lg"></iconify-icon>
+                    </div>
+                    <h4 class="text-base font-medium text-white">Role Templates</h4>
+                </div>
+                <p class="text-sm text-zinc-400">Specific <span class="font-mono text-xs px-1 py-0.5 rounded bg-white/10">CLAUDE.md</span> guidelines and prompt structures optimized for POs and Designers to generate perfect inputs.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors group fade-up delay-100">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:monitor-smartphone-linear" class="text-lg"></iconify-icon>
+                    </div>
+                    <h4 class="text-base font-medium text-white">Dashboard</h4>
+                </div>
+                <p class="text-sm text-zinc-400">A lightweight web application that aggregates and indexes blueprints across all your projects for persistent knowledge retrieval.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Why It Matters -->
+    <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
+        <h2 class="text-3xl font-semibold tracking-tight text-white mb-4 text-center">Why try Blackbox?</h2>
+        <p class="text-base text-zinc-400 max-w-2xl mx-auto text-center mb-12">What changes when your whole team works from the same structured path?</p>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                        <iconify-icon icon="solar:shield-check-linear" class="text-xl text-emerald-400"></iconify-icon>
+                    </div>
+                    <h5 class="text-base font-medium text-white">AI output you can trust</h5>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">Every AI conversation starts from the same structured input. The ticket template and blueprint format eliminate guesswork — what AI generates is grounded in what was actually agreed on.</p>
+            </div>
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                        <iconify-icon icon="solar:stopwatch-linear" class="text-xl text-blue-400"></iconify-icon>
+                    </div>
+                    <h5 class="text-base font-medium text-white">Less back-and-forth</h5>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">Requirements are explicit from the start. Developers don't have to chase context across Slack threads, meetings, or vague tickets. The blueprint has everything they need.</p>
+            </div>
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                        <iconify-icon icon="solar:database-linear" class="text-xl text-purple-400"></iconify-icon>
+                    </div>
+                    <h5 class="text-base font-medium text-white">Decisions that persist</h5>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">Blueprints live in the repo alongside the code. Every technical decision, every requirement, every constraint — searchable and permanent, not lost in a chat window.</p>
+            </div>
+            <div class="p-6 rounded-xl border border-white/5 bg-zinc-900/20">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                        <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-xl text-orange-400"></iconify-icon>
+                    </div>
+                    <h5 class="text-base font-medium text-white">No new tools to learn</h5>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">Product Owner and Designer stay in Asana. Developer stays in the editor. Blackbox doesn't replace your workflow — it structures the handoffs between roles so nothing gets lost.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rotating word animation script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const words = ['framework', 'toolkit', 'system', 'protocol', 'workflow'];
+            const el = document.getElementById('rotating-word');
+            if (!el) return;
+            let wordIndex = 0;
+
+            function typeWord(word: string, cb: () => void) {
+                el.classList.add('typing');
+                let i = 0;
+                function next() {
+                    if (i <= word.length) {
+                        el.textContent = word.slice(0, i);
+                        i++;
+                        setTimeout(next, 80);
+                    } else {
+                        cb();
+                    }
+                }
+                next();
+            }
+
+            function deleteWord(cb: () => void) {
+                const text = el.textContent || '';
+                let i = text.length;
+                function next() {
+                    if (i >= 0) {
+                        el.textContent = text.slice(0, i);
+                        i--;
+                        setTimeout(next, 50);
+                    } else {
+                        cb();
+                    }
+                }
+                next();
+            }
+
+            function cycleWord() {
+                setTimeout(() => {
+                    el.classList.remove('typing');
+                    el.classList.add('strike');
+                    setTimeout(() => {
+                        el.classList.remove('strike');
+                        deleteWord(() => {
+                            wordIndex = (wordIndex + 1) % words.length;
+                            setTimeout(() => {
+                                typeWord(words[wordIndex], cycleWord);
+                            }, 300);
+                        });
+                    }, 800);
+                }, 1500);
+            }
+
+            const tooltip = document.querySelector('.rotating-tooltip');
+            if (tooltip) {
+                setTimeout(() => {
+                    tooltip.classList.add('show');
+                    setTimeout(() => {
+                        tooltip.classList.remove('show');
+                    }, 5000);
+                }, 5000);
+            }
+
+            setTimeout(() => {
+                typeWord(words[0], cycleWord);
+            }, 800);
+        });
+    </script>
+</BaseLayout>
