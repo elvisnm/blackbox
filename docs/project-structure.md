@@ -14,6 +14,15 @@ blackbox/
       config.ts                   # ~/.blackbox/config.json reader/writer
   dashboard/                      # Dashboard web app (Vite + React + TypeScript + shadcn/ui)
   docs/                           # Documentation
+    concept.md                    # Vision and principles
+    roles.md                      # Role definitions (PO, DESIGN, DEV, QA)
+    setup.md                      # Setup guide
+    workflow.md                   # Workflow documentation
+    spec.md                       # System specification
+    asana-ticket-template.md      # Asana ticket contract template
+    claude-templates/             # Role-specific CLAUDE.md templates
+      CLAUDE_PO.md                # Product Owner Claude config
+      CLAUDE_DESIGN.md            # Designer Claude config
   .claude/
     commands/                     # Skill definitions (17 skills)
     references/                   # Shared docs loaded on demand by skills
@@ -21,6 +30,7 @@ blackbox/
   .blackbox/                      # Blackbox's own .blackbox/ (dogfooding)
     blueprints/
       _template.md                # Blueprint template
+      assets/                     # Shared blueprint assets
       feat/                       # Feature blueprints
       fix/                        # Bug fix blueprints
       improve/                    # Improvement/refactor blueprints
