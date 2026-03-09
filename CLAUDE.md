@@ -1,5 +1,14 @@
 # Blackbox — Blueprint Management System
 
+## Critical Rules
+
+- **Never** add `Co-Authored-By` to commit messages.
+- **Never** auto-commit. Always wait for the user to approve.
+- **Never** write to the repo when acting as PO or DESIGN role — all output goes to Asana.
+- **Never** modify Asana-owned blueprint sections (Goal, Context, Requirements, UI/UX, Constraints) during `/implement`. Use `/refresh` to pull Asana changes.
+- **Commit format**: `[DEV] {type}/{blueprint-name}: summary`
+- **Environment**: `ASANA_TOKEN` env var required for `/scaffold`, `/refresh`, `/send-back`, and all ticket management skills.
+
 ## What This Is
 
 Blackbox is a system for managing blueprints — technical recipes that tell developers (and their Claude) exactly what to build, where to build it, and how to verify it works. Blueprints live inside each project's `.blackbox/blueprints/` folder.
@@ -8,68 +17,7 @@ The workflow is split in two:
 - **Asana** is the workflow tracker. PO and DESIGN work here, using Claude with structured templates.
 - **Blueprint** is the technical recipe. DEV generates it from Asana, enriches it with codebase research, and uses it as the source of truth during implementation.
 
-See `docs/concept.md` for the vision and principles.
-
-## Project Structure
-
-```
-blackbox/
-  CLAUDE.md                       # This file
-  README.md                       # Project overview
-  bin/                            # CLI entry point (bbox)
-    bbox                          # Shell wrapper
-    bbox.ts                       # Subcommand router
-    commands/
-      init.ts                     # bbox init logic
-      config.ts                   # bbox config commands (add-repo, remove-repo, etc.)
-    lib/
-      config.ts                   # ~/.blackbox/config.json reader/writer
-  dashboard/                      # Dashboard web app (Vite + React + TypeScript + shadcn/ui)
-  .claude/
-    commands/
-      scaffold.md                 # /scaffold — generate blueprint from Asana ticket
-      refresh.md                  # /refresh — update blueprint from Asana after send-back
-      refine.md                   # /refine — research codebase, fill technical context
-      start.md                    # /start — review blueprint, begin work
-      implement.md                # /implement — execute plan with Beads
-      review-code.md              # /review-code — self-review before committing
-      wrap-up.md                  # /wrap-up — clean code, lint, create PR doc
-      create-pr.md                # /create-pr — create GitHub PR from PR doc
-      update-pr.md                # /update-pr — update existing GitHub PR
-      pr-review.md                # /pr-review — review someone else's PR
-      status.md                   # /status — list blueprints and progress
-      send-back.md                # /send-back — return ticket to PO/DESIGN via Asana
-      draft.md                    # /draft — create new Asana ticket from idea
-      refine-ticket.md            # /refine-ticket — improve Asana ticket with codebase research
-      review-ticket.md            # /review-ticket — validate ticket against quality gates
-      design.md                   # /design — fill UI/UX section of Asana ticket
-      review-design.md            # /review-design — validate design specs against codebase
-    references/                   # Shared reference docs (progressive disclosure)
-      review-checklist.md         # Code review checklist (Style, Quality, Security, etc.)
-      pr-conventions.md           # PR title prefixes and body formatting rules
-      contract-template-guide.md  # Asana ticket template structure and rules
-      quality-gates.md            # Ticket quality gates (6 gates)
-      design-validation-checks.md # Design spec validation checks (5 checks)
-    scripts/                      # Deterministic validation scripts
-      validate-blueprint.sh       # Check blueprint has required sections
-      validate-pr-doc.sh          # Check PR doc structure and title prefix
-      check-progress.sh           # Count [x] vs [ ] checkboxes as JSON
-      parse-asana-url.sh          # Extract task ID from Asana URL formats
-  .blackbox/                      # Blackbox's own .blackbox/ (dogfooding)
-    blueprints/
-      _template.md                # Blueprint template
-      feat/                       # Feature blueprints
-      fix/                        # Bug fix blueprints
-      improve/                    # Improvement/refactor blueprints
-      hotfix/                     # Urgent production fix blueprints
-    prs/
-      _template.md                # PR document template
-      feat/                       # PR docs for feature blueprints
-      fix/                        # PR docs for bug fix blueprints
-      improve/                    # PR docs for improvement blueprints
-      hotfix/                     # PR docs for hotfix blueprints
-      reviews/                    # PR review artifacts
-```
+See `docs/concept.md` for the vision and principles. See `docs/project-structure.md` for the full directory tree.
 
 ## Skills
 
@@ -126,10 +74,11 @@ Only DEV commits blueprints. PO and DESIGN work in Asana.
 
 Blueprints are technical recipes — they don't track workflow status. Asana tracks the full workflow status (draft, refining, designing, in-progress, pr-review, testing, done).
 
-## Git
+## Validation Scripts
 
-Never add `Co-Authored-By` to commit messages.
+Skills use deterministic bash scripts in `.claude/scripts/` instead of relying on LLM interpretation:
 
-## Environment
-
-Requires `ASANA_TOKEN` env var for `/scaffold`, `/refresh`, and `/send-back` commands.
+- `validate-blueprint.sh <path>` — Check required sections exist in a blueprint (JSON output)
+- `validate-pr-doc.sh <path>` — Check PR doc structure and title prefix (JSON output)
+- `check-progress.sh <path>` — Count `[x]` vs `[ ]` checkboxes per section (JSON output)
+- `parse-asana-url.sh <url>` — Extract `task_id` and `project_id` from Asana URLs (JSON output)
