@@ -12,7 +12,7 @@ bbox init /path/to/your-project
 
 This creates:
 - `.blackbox/blueprints/` folder structure with template
-- `.claude/commands/` with all 12 skills (or globally at `~/.claude/commands/`)
+- `.claude/commands/` with all skills (or globally at `~/.claude/commands/`)
 
 ### 2. Set your Asana token
 

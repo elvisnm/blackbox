@@ -31,7 +31,7 @@ blackbox/
   README.md                 # This file
   bin/                      # CLI entry point (bbox)
   dashboard/                # Dashboard web app (Vite + React + TypeScript + shadcn/ui)
-  .claude/commands/         # Portable CLI skills (12 commands)
+  .claude/commands/         # Portable skills
   .blackbox/                # Blackbox's own .blackbox/ (dogfooding)
     blueprints/
 ```
