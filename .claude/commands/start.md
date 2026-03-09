@@ -38,10 +38,7 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
      /status {type}/{blueprint-name}     -- detailed view
    ```
 
-   To compute progress counts:
-   - **Requirements**: Count `- [x]` and `- [ ]` lines in the `## Requirements` section
-   - **Implementation Plan**: Count `- [x]` and `- [ ]` lines in `## Implementation Plan`, grouped by `### Phase` subsections
-   - **Validation**: Count `- [x]` and `- [ ]` lines in the `### Tests` subsection of `## Validation`
+   Use the JSON output from step 2 (`check-progress.sh`) for the progress counts.
 
 4. **If the blueprint has no Implementation Plan**, suggest running `/refine {type}/{name}` first.
 
