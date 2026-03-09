@@ -39,6 +39,22 @@ blackbox/
       pr-review.md                # /pr-review — review someone else's PR
       status.md                   # /status — list blueprints and progress
       send-back.md                # /send-back — return ticket to PO/DESIGN via Asana
+      draft.md                    # /draft — create new Asana ticket from idea
+      refine-ticket.md            # /refine-ticket — improve Asana ticket with codebase research
+      review-ticket.md            # /review-ticket — validate ticket against quality gates
+      design.md                   # /design — fill UI/UX section of Asana ticket
+      review-design.md            # /review-design — validate design specs against codebase
+    references/                   # Shared reference docs (progressive disclosure)
+      review-checklist.md         # Code review checklist (Style, Quality, Security, etc.)
+      pr-conventions.md           # PR title prefixes and body formatting rules
+      contract-template-guide.md  # Asana ticket template structure and rules
+      quality-gates.md            # Ticket quality gates (6 gates)
+      design-validation-checks.md # Design spec validation checks (5 checks)
+    scripts/                      # Deterministic validation scripts
+      validate-blueprint.sh       # Check blueprint has required sections
+      validate-pr-doc.sh          # Check PR doc structure and title prefix
+      check-progress.sh           # Count [x] vs [ ] checkboxes as JSON
+      parse-asana-url.sh          # Extract task ID from Asana URL formats
   .blackbox/                      # Blackbox's own .blackbox/ (dogfooding)
     blueprints/
       _template.md                # Blueprint template
@@ -71,6 +87,13 @@ blackbox/
 - `/create-pr [type/name]` — Create GitHub PR from `.blackbox/prs/` doc
 - `/update-pr [type/name]` — Update existing GitHub PR from `.blackbox/prs/` doc
 - `/pr-review {branch|pr-number}` — Review someone else's PR
+
+### Ticket Management
+- `/draft {idea}` — Create a new Asana ticket from an idea, grounded in codebase research
+- `/refine-ticket {asana-url}` — Improve an existing Asana ticket with code-grounded details
+- `/review-ticket {asana-url}` — Validate ticket against quality gates before marking ready
+- `/design {asana-url}` — Fill UI/UX section of an Asana ticket with component references
+- `/review-design {asana-url}` — Validate design specs against codebase components and patterns
 
 ### Status
 - `/status [type/name]` — List blueprints with progress counts
