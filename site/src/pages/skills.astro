@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Skills | Blackbox" currentPage="skills">
+
+        <!-- Hero Section -->
+        <section class="max-w-2xl mx-auto px-6 mt-8 mb-24 text-center fade-up">
+            <h1 class="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-6">
+                Skills
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 leading-relaxed mb-6">
+                Portable Claude Code commands that live in <span class="font-mono text-sm text-zinc-300">.claude/commands/</span> inside the repo. No plugins, no extensions — just structured prompts that keep AI aligned with what was agreed on.
+            </p>
+            <p class="text-base text-zinc-500 leading-relaxed">
+                When you run a skill, Claude reads the structured prompt and executes it with full context of your codebase and blueprint. No configuration needed — clone the repo and the skills are ready to use.
+            </p>
+        </section>
+
+        <!-- Skills Grid -->
+        <div class="max-w-6xl mx-auto px-6 space-y-20 mb-24">
+
+            <!-- Product Owner -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Product Owner</h2>
+                    <p class="text-sm text-zinc-500">Commands to create, refine, and validate Asana tickets using the contract template.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)]">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/draft</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Create a new Asana ticket using the contract template. Claude structures the goal, context, and requirements from the Product Owner's input.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)]">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refine-ticket</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Improve a ticket based on codebase research. Claude has read-only access to reference actual code, endpoints, and data models.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)]">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/review-ticket</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Validate a ticket against quality gates before marking it ready. Checks for completeness, testable requirements, and clear acceptance criteria.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Designer -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Designer</h2>
+                    <p class="text-sm text-zinc-500">Commands to shape the interface using the ticket as the source of truth.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-purple-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/design</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Fill the UI/UX section of a ticket with component references from the codebase. Maps existing patterns and components to the new requirements.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-purple-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/review-design</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Validate design specs against existing components and patterns. Flags inconsistencies or missing references before handing off to the Developer.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blueprint Lifecycle -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Developer — Blueprint Lifecycle</h2>
+                    <p class="text-sm text-zinc-500">Commands to generate, update, and validate the technical recipe.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/scaffold</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Generate a blueprint from an Asana ticket. Pulls the structured content and creates the technical recipe in .blackbox/blueprints/.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refresh</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Update a blueprint after a send-back. Overwrites Asana-owned sections while preserving Developer-owned sections.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refine</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Research the codebase and fill in the technical context and implementation plan.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/send-back</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Return a ticket to Product Owner or Designer via Asana when requirements are unclear or incomplete.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Development Flow -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Developer — Development Flow</h2>
+                    <p class="text-sm text-zinc-500">Commands to execute and track the actual implementation.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/start</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Review the blueprint summary and prepare to begin work.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/implement</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Execute the implementation plan step by step with task tracking.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/review-code</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Self-review changed files against a quality checklist before committing.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/wrap-up</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Clean code, run linters, and create a Pull Request document in .blackbox/prs/.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/create-pr</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Create a GitHub Pull Request from the Pull Request document.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/update-pr</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Update an existing GitHub Pull Request from the Pull Request document.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Review & Status -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Developer — Review &amp; Status</h2>
+                    <p class="text-sm text-zinc-500">Commands to monitor progress and maintain quality.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-emerald-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/pr-review</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Review someone else's Pull Request.</p>
+                    </div>
+                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
+                        <span class="font-mono text-sm text-emerald-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/status</span>
+                        <p class="text-sm text-zinc-400 leading-relaxed">List blueprints and their progress.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Closing Section -->
+        <section class="max-w-4xl mx-auto px-6 mb-16 fade-up">
+            <div class="p-8 md:p-12 rounded-2xl border border-white/10 bg-gradient-to-b from-zinc-900/40 to-transparent text-center relative overflow-hidden">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/5 blur-[80px] pointer-events-none"></div>
+                <h2 class="text-3xl font-semibold tracking-tight text-white mb-6">Structure, Not Automation</h2>
+                <p class="text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+                    Skills don't replace the developer. They keep Claude focused on what was agreed — the ticket, the blueprint, the plan. Every decision still goes through you.
+                </p>
+            </div>
+        </section>
+
+</BaseLayout>
