@@ -106,6 +106,16 @@ When all phases are complete:
 - Respect the `[deterministic]` vs `[agentic]` distinction.
 - Beads tasks are ephemeral per session. The blueprint is the persistent record.
 
+## Examples
+
+### Example 1: Start implementing from Phase 1
+User says: `/implement feat/dashboard`
+Result: Creates Beads tasks for Phase 1, loads related files, executes first task. After each task, asks: "Continue, pause, or skip?"
+
+### Example 2: Resume partially completed blueprint
+User says: `/implement feat/dashboard` (Phase 1 done, Phase 2 in progress)
+Result: Skips Phase 1, picks up first unchecked task in Phase 2, creates Beads tasks for remaining work.
+
 ## Troubleshooting
 
 ### Beads not installed (`bd` not found)

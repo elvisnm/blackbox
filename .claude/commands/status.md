@@ -68,6 +68,16 @@ This can be:
    Total: X blueprints
    ```
 
+## Examples
+
+### Example 1: Show all blueprints
+User says: `/status`
+Result: Table of all blueprints with type, progress (e.g., 3/10 tasks), Asana link, and PR status.
+
+### Example 2: Show specific blueprint
+User says: `/status feat/dashboard`
+Result: Detailed view with per-phase progress, list of remaining unchecked tasks, and links.
+
 ## Troubleshooting
 
 ### No blueprints found

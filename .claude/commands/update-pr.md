@@ -45,6 +45,12 @@ Only update title and body -- do NOT change reviewers, assignee, base branch, or
 - Show the PR URL to the user
 - Confirm the PR was updated with the latest content from the PR document
 
+## Examples
+
+### Example 1: Update PR after code changes
+User says: `/update-pr feat/dashboard`
+Result: Reads updated `.blackbox/prs/feat/dashboard.md`, finds existing PR #42, updates title and body on GitHub.
+
 ## Troubleshooting
 
 ### No open PR for current branch

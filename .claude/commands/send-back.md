@@ -46,6 +46,16 @@ Examples:
 
 Do NOT modify the blueprint itself. The blueprint stays as-is until `/refresh` is run after the ticket returns.
 
+## Examples
+
+### Example 1: Send back to PO
+User says: `/send-back feat/auth-sso OAuth library deprecated, need new approach`
+Result: Updates Asana ticket status to "Needs Refinement", adds comment with the reason. Reminds: "Run `/refresh feat/auth-sso` when it comes back."
+
+### Example 2: Send back to Design
+User says: `/send-back feat/dashboard mobile layout unclear, need DESIGN input`
+Result: Updates Asana ticket status to "Needs Redesign", adds comment. Blueprint stays unchanged.
+
 ## Troubleshooting
 
 ### Blueprint has no Asana URL

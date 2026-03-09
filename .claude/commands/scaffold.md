@@ -68,6 +68,16 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 
 Do NOT commit automatically. Let the user decide when to commit.
 
+## Examples
+
+### Example 1: Scaffold from Asana URL
+User says: `/scaffold https://app.asana.com/0/1234567/8901234`
+Result: Blueprint created at `.blackbox/blueprints/feat/user-auth.md` with Goal, Context, and Requirements pulled from the Asana ticket.
+
+### Example 2: Ticket without structured template
+User says: `/scaffold https://app.asana.com/0/1234567/5555555`
+Result: Blueprint created with best-effort section mapping. Empty or vague sections are flagged for the user to review.
+
 ## Troubleshooting
 
 ### Invalid Asana URL

@@ -44,6 +44,16 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
 5. **Do NOT start implementing**. That is `/implement`'s job. `/start` only shows context and prepares the developer.
 
+## Examples
+
+### Example 1: Start a blueprint with implementation plan
+User says: `/start feat/dashboard`
+Result: Shows summary with goal, progress counts (Requirements: 0/5, Implementation: 0/8, Validation: 0/3), and suggests `/implement feat/dashboard`.
+
+### Example 2: Start a blueprint without implementation plan
+User says: `/start feat/new-feature`
+Result: Shows summary with warning: "No Implementation Plan found. Run `/refine feat/new-feature` first."
+
 ## Troubleshooting
 
 ### Blueprint not found

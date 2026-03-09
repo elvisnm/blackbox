@@ -56,6 +56,16 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
 Do NOT commit automatically. Let the user review and commit when ready.
 
+## Examples
+
+### Example 1: Refine a feature blueprint
+User says: `/refine feat/dashboard`
+Result: Codebase Context filled with related files, dependencies, and patterns. Implementation Plan drafted with phased tasks marked `[deterministic]` or `[agentic]`.
+
+### Example 2: Re-refine after requirements changed
+User says: `/refine feat/dashboard` (after a `/refresh`)
+Result: Existing Codebase Context and Implementation Plan are updated based on new requirements. Previously filled sections are revised, not wiped.
+
 ## Troubleshooting
 
 ### Blueprint not found

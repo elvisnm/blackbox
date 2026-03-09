@@ -116,6 +116,16 @@ Any other observations or context.
 - Overall verdict recommendation
 - Path to the review document
 
+## Examples
+
+### Example 1: Review by PR number
+User says: `/pr-review 42`
+Result: Fetches branch from PR #42, diffs against main, reads all changed files, writes review to `.blackbox/prs/reviews/review-feat-dashboard.md`.
+
+### Example 2: Review by branch name
+User says: `/pr-review feat/auth-sso`
+Result: Fetches branch, diffs, reviews. Creates review document with blocker/issue/suggestion counts and verdict recommendation.
+
 ## Troubleshooting
 
 ### Branch not found on remote

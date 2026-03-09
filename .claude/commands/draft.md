@@ -61,6 +61,16 @@ This should be a brief description of what they want to build or fix (e.g., "add
 - Requirements MUST be testable — not "better error handling" but "show user-friendly error message when API returns 429."
 - Goal MUST be one sentence. If it takes more, the scope is too big.
 
+## Examples
+
+### Example 1: Draft a feature ticket
+User says: `/draft add dark mode toggle to settings page`
+Result: Discusses with PO, researches codebase for settings page and theme system, creates Asana ticket with Goal, Context (referencing actual `SettingsPage.tsx`), and testable Requirements.
+
+### Example 2: Draft a bug fix ticket
+User says: `/draft payment form crashes on empty email`
+Result: Traces the bug in code, creates `fix` type ticket with Current Behavior (actual error), Desired Behavior, and specific requirements.
+
 ## Troubleshooting
 
 ### Asana MCP unavailable and ASANA_TOKEN not set

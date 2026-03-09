@@ -73,6 +73,16 @@ These can be triggered separately:
 | `branch name` | Suggest a branch name based on the work |
 | `simplify` | Just step 2 (review & fix code quality) |
 
+## Examples
+
+### Example 1: Full wrap-up with blueprint
+User says: `/wrap-up feat/dashboard`
+Result: Removes inline comments, runs `/simplify`, runs ESLint, suggests commit message `[DEV] feat/dashboard: implement dashboard layout`, creates PR doc at `.blackbox/prs/feat/dashboard.md`.
+
+### Example 2: Just a commit message
+User says: `commit message`
+Result: Runs git diff, summarizes changes, suggests: `[DEV] feat/dashboard: add sidebar navigation component`.
+
 ## Troubleshooting
 
 ### ESLint fails with errors

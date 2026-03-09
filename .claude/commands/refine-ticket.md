@@ -64,6 +64,12 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - If you find something unexpected in the codebase, add it to Open Questions rather than assuming.
 - Show changes to the Product Owner before updating the ticket.
 
+## Examples
+
+### Example 1: Refine a vague ticket
+User says: `/refine-ticket https://app.asana.com/0/1234567/8901234`
+Result: Fetches ticket, researches codebase, replaces "improve loading speed" with "reduce API response time for `/api/dashboard` from 3.2s to under 500ms". Shows before/after to PO.
+
 ## Troubleshooting
 
 ### Invalid Asana URL

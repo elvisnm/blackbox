@@ -88,6 +88,12 @@ Files attached to this ticket:
 - Preserve all existing ticket sections when updating — only fill/modify the UI/UX section.
 - If the ticket's Goal or Requirements are unclear, send back to Product Owner rather than guessing.
 
+## Examples
+
+### Example 1: Fill UI/UX for a feature ticket
+User says: `/design https://app.asana.com/0/1234567/8901234`
+Result: Researches codebase for existing components, fills UI/UX section with screens/flows, component choices (reuse `Dialog` from `components/Dialog.tsx`), and new components needed. Updates Asana ticket.
+
 ## Troubleshooting
 
 ### Asana task has no Requirements section

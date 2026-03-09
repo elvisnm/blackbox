@@ -51,6 +51,16 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - Be specific about what's wrong — not "requirements are vague" but "Requirement 3 says 'improve loading speed' — what's the target? Under 2 seconds? Under 500ms?"
 - This is a helper, not a blocker. If the Product Owner disagrees with a flag, they can override — but log it.
 
+## Examples
+
+### Example 1: Ticket passes all gates
+User says: `/review-ticket https://app.asana.com/0/1234567/8901234`
+Result: All 6 gates pass. Asks PO: "Ready for Design or Ready for Development?"
+
+### Example 2: Ticket fails gates
+User says: `/review-ticket https://app.asana.com/0/1234567/5555555`
+Result: Gate 3 FAIL (Requirement 2 says "better error handling" — not testable), Gate 5 FAIL (Open Questions not empty). Lists specific issues.
+
 ## Troubleshooting
 
 ### Invalid Asana URL

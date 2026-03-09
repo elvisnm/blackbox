@@ -62,6 +62,12 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 
 Do NOT commit automatically.
 
+## Examples
+
+### Example 1: Refresh after PO updated requirements
+User says: `/refresh feat/dashboard`
+Result: Requirements and Context sections are overwritten with latest from Asana. Implementation Plan is preserved. Warning shown: "Requirements changed significantly — review your Implementation Plan."
+
 ## Troubleshooting
 
 ### Blueprint has no Asana URL

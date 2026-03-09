@@ -58,6 +58,16 @@ After presenting findings, ask: "Want me to fix the blockers?"
 
 After the checklist review is complete and any blockers are addressed, run `/simplify` to do a deeper code reuse, quality, and efficiency review of the same changes.
 
+## Examples
+
+### Example 1: Review with blockers found
+User says: `/review-code`
+Result: Reviews 4 changed files, finds 2 blockers (console.log, missing error handling) and 1 suggestion. Asks: "Want me to fix the blockers?"
+
+### Example 2: Clean review
+User says: `/review-code`
+Result: Reviews 3 changed files, all checklist items pass. Proceeds to `/simplify` for deeper analysis.
+
 ## Troubleshooting
 
 ### No changed files (clean working tree)

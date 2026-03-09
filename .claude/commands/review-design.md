@@ -58,6 +58,12 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - Missing error/loading/empty states is a warning, not a blocker — but always flag it.
 - If Open Questions section is not empty, BLOCK the transition to "Ready for Development."
 
+## Examples
+
+### Example 1: Design spec with mismatched component
+User says: `/review-design https://app.asana.com/0/1234567/8901234`
+Result: Check 1 FAIL — "`UserCard` referenced at `components/UserCard.tsx` but actual path is `components/users/ProfileCard.tsx`." Check 4 warning — missing error state. Suggests fixes to Designer.
+
 ## Troubleshooting
 
 ### Ticket has no UI/UX section

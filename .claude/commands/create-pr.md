@@ -61,6 +61,12 @@ Use a HEREDOC for the body to preserve markdown formatting.
 - Confirm reviewers and assignee were set
 - Confirm blueprint PR link was updated
 
+## Examples
+
+### Example 1: Create PR from blueprint
+User says: `/create-pr feat/dashboard`
+Result: Reads `.blackbox/prs/feat/dashboard.md`, pushes branch, asks for base branch and reviewers, creates PR with title `Feat: Dashboard layout and navigation`, updates blueprint PR link.
+
 ## Troubleshooting
 
 ### `gh` CLI not authenticated
