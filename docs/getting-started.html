@@ -94,18 +94,41 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             </p>
         </section>
 
+        <!-- Requirements -->
+        <section class="max-w-3xl mx-auto px-6 mb-24 fade-up">
+            <h2 class="text-3xl font-semibold tracking-tight text-white mb-4 text-center">Requirements</h2>
+            <p class="text-base text-zinc-400 mb-8 text-center">Before you start, make sure you have these set up.</p>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center">
+                    <iconify-icon icon="solar:code-square-linear" class="text-3xl text-blue-400 mb-3"></iconify-icon>
+                    <h3 class="text-base font-semibold text-white mb-2">Claude Code</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Anthropic's CLI for Claude. This is what runs the skills.</p>
+                </div>
+                <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center">
+                    <iconify-icon icon="solar:checklist-linear" class="text-3xl text-orange-400 mb-3"></iconify-icon>
+                    <h3 class="text-base font-semibold text-white mb-2">Asana</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Project management where tickets live. All roles collaborate here.</p>
+                </div>
+                <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center">
+                    <iconify-icon icon="solar:plug-circle-linear" class="text-3xl text-emerald-400 mb-3"></iconify-icon>
+                    <h3 class="text-base font-semibold text-white mb-2">Asana MCP Server</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Connects Claude Code to Asana. Lets skills read and write tickets directly.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Quick Start for DEV -->
         <section class="max-w-3xl mx-auto px-6 mb-32 fade-up">
             <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Quick Start for Developers</h2>
             <div class="flex flex-col gap-6">
 
                 <!-- Step 1 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">1</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Clone the Repository</h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6">Clone the Blackbox repository to your machine. This gives you the CLI, skills, and templates.</p>
+                    <p class="text-base text-zinc-400 mb-6">This gives you the skills and templates.</p>
                     <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -119,7 +142,7 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                 </div>
 
                 <!-- Step 2 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">2</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Initialize Project</h3>
@@ -138,7 +161,7 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                 </div>
 
                 <!-- Step 3 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">3</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Set Asana Token</h3>
@@ -157,7 +180,7 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                 </div>
 
                 <!-- Step 4 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
+                <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">4</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Add Repo <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
@@ -175,24 +198,6 @@ linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
                     </div>
                 </div>
 
-                <!-- Step 5 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-zinc-900/20">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">5</div>
-                        <h3 class="text-xl font-semibold tracking-tight text-white">Set Author <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
-                    </div>
-                    <p class="text-base text-zinc-400 mb-6">Maps your local work to your GitHub profile. Auto-detected from GitHub CLI or your local git config.</p>
-                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
-                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
-                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                        </div>
-                        <div class="p-4 overflow-x-auto">
-                            <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox set author</span> your-github-username</code>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </section>

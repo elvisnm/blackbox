@@ -114,13 +114,6 @@ describe('listRepos', () => {
 });
 
 describe('setConfigValue', () => {
-  it('sets the author', () => {
-    configCommands.setConfigValue('author', 'testuser');
-
-    const config = configLib.readConfig();
-    expect(config.author).toBe('testuser');
-  });
-
   it('sets the token', () => {
     configCommands.setConfigValue('token', 'ghp_abc123');
 
@@ -130,10 +123,10 @@ describe('setConfigValue', () => {
 
   it('preserves existing config when setting a value', () => {
     configCommands.addRepo('org/repo');
-    configCommands.setConfigValue('author', 'testuser');
+    configCommands.setConfigValue('token', 'ghp_test');
 
     const config = configLib.readConfig();
-    expect(config.author).toBe('testuser');
+    expect(config.token).toBe('ghp_test');
     expect(config.repos).toHaveLength(1);
   });
 

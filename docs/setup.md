@@ -32,13 +32,7 @@ bbox add-repo owner/repo --branch main
 
 This is done automatically during `bbox init` if the project has a git remote.
 
-### 4. Set your author name
 
-```bash
-bbox set author your-github-username
-```
-
-This is used in commit messages and is auto-detected from `gh` or `git config` if not set.
 
 ## PO Setup
 

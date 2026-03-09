@@ -9,7 +9,6 @@ export interface RepoEntry {
 }
 
 export interface BlackboxConfig {
-  author?: string;
   token?: string;
   role?: string;
   repos: RepoEntry[];
@@ -39,7 +38,6 @@ export function readConfig(): BlackboxConfig {
     const parsed = JSON.parse(raw);
 
     return {
-      author: parsed.author,
       token: parsed.token,
       role: parsed.role,
       repos: Array.isArray(parsed.repos) ? parsed.repos : [],

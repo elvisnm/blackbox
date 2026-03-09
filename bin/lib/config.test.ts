@@ -39,14 +39,12 @@ describe('readConfig', () => {
   it('reads a valid config file', () => {
     mkdirSync(FAKE_CONFIG_DIR, { recursive: true });
     writeFileSync(FAKE_CONFIG_PATH, JSON.stringify({
-      author: 'testuser',
       token: 'ghp_test',
       role: 'dev',
       repos: [{ owner: 'org', repo: 'project', branch: 'main' }],
     }));
 
     const config = configModule.readConfig();
-    expect(config.author).toBe('testuser');
     expect(config.token).toBe('ghp_test');
     expect(config.role).toBe('dev');
     expect(config.repos).toHaveLength(1);
@@ -56,7 +54,6 @@ describe('readConfig', () => {
   it('reads config with role field', () => {
     mkdirSync(FAKE_CONFIG_DIR, { recursive: true });
     writeFileSync(FAKE_CONFIG_PATH, JSON.stringify({
-      author: 'testuser',
       role: 'qa',
       repos: [],
     }));
@@ -68,7 +65,6 @@ describe('readConfig', () => {
   it('returns undefined role when not set', () => {
     mkdirSync(FAKE_CONFIG_DIR, { recursive: true });
     writeFileSync(FAKE_CONFIG_PATH, JSON.stringify({
-      author: 'testuser',
       repos: [],
     }));
 
@@ -86,10 +82,10 @@ describe('readConfig', () => {
 
   it('handles missing repos array gracefully', () => {
     mkdirSync(FAKE_CONFIG_DIR, { recursive: true });
-    writeFileSync(FAKE_CONFIG_PATH, JSON.stringify({ author: 'testuser' }));
+    writeFileSync(FAKE_CONFIG_PATH, JSON.stringify({ token: 'test' }));
 
     const config = configModule.readConfig();
-    expect(config.author).toBe('testuser');
+    expect(config.token).toBe('test');
     expect(config.repos).toEqual([]);
   });
 });
@@ -106,7 +102,6 @@ describe('writeConfig', () => {
 
   it('writes valid JSON to the config file', () => {
     const config = {
-      author: 'testuser',
       token: 'ghp_abc',
       repos: [{ owner: 'org', repo: 'repo', branch: 'main' }],
     };
@@ -120,10 +115,10 @@ describe('writeConfig', () => {
 
   it('overwrites existing config', () => {
     configModule.writeConfig({ repos: [{ owner: 'a', repo: 'b', branch: 'main' }] });
-    configModule.writeConfig({ author: 'new', repos: [] });
+    configModule.writeConfig({ token: 'new', repos: [] });
 
     const config = configModule.readConfig();
-    expect(config.author).toBe('new');
+    expect(config.token).toBe('new');
     expect(config.repos).toEqual([]);
   });
 });

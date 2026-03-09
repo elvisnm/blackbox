@@ -29,7 +29,7 @@ Commands:
   add-repo owner/repo [--branch name]  Add a repo to the dashboard
   remove-repo owner/repo               Remove a repo from the dashboard
   list-repos                           List configured repos
-  set <key> <value>                    Set a config value (author, token)
+  set <key> <value>                    Set a config value (token, role)
 `;
 
 switch (command) {
@@ -62,7 +62,7 @@ switch (command) {
 
   case 'set':
     if (!args[0] || !args[1]) {
-      console.error('Usage: bbox set <key> <value>\nKeys: author, token');
+      console.error('Usage: bbox set <key> <value>\nKeys: token, role');
       process.exit(1);
     }
     setConfigValue(args[0], args[1]);

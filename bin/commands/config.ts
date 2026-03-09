@@ -72,8 +72,8 @@ export function listRepos(): void {
 }
 
 export function setConfigValue(key: string, value: string): void {
-  if (key !== 'author' && key !== 'token' && key !== 'role') {
-    p.log.error(`Unknown config key: "${key}". Supported keys: author, token, role`);
+  if (key !== 'token' && key !== 'role') {
+    p.log.error(`Unknown config key: "${key}". Supported keys: token, role`);
     process.exit(1);
   }
 
