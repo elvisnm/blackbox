@@ -4,18 +4,19 @@ interface Props {
 }
 
 const { currentPage } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const links = [
-  { href: '/workflow.html', label: 'Workflow', id: 'workflow' },
-  { href: '/contract.html', label: 'The Contract', id: 'contract' },
-  { href: '/skills.html', label: 'Skills', id: 'skills' },
-  { href: '/getting-started.html', label: 'Get Started', id: 'getting-started' },
+  { href: `${base}/workflow.html`, label: 'Workflow', id: 'workflow' },
+  { href: `${base}/contract.html`, label: 'The Contract', id: 'contract' },
+  { href: `${base}/skills.html`, label: 'Skills', id: 'skills' },
+  { href: `${base}/getting-started.html`, label: 'Get Started', id: 'getting-started' },
 ];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a0f]/80 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/index.html" class="flex items-center gap-2">
+        <a href={`${base}/index.html`} class="flex items-center gap-2">
             <div class="w-6 h-6 rounded bg-gradient-to-br from-zinc-700 to-black border border-zinc-600 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.1)]"></div>
             <span class="text-lg font-semibold tracking-tighter text-white uppercase">BLACKBOX</span>
         </a>

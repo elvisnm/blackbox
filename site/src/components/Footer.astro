@@ -1,18 +1,22 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
 <!-- Footer -->
 <footer class="border-t border-white/5 bg-[#0a0a0f] py-8 relative z-10">
     <div class="max-w-6xl mx-auto px-6">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
-                <a href="/index.html" class="flex items-center gap-2">
+                <a href={`${base}/index.html`} class="flex items-center gap-2">
                     <div class="w-5 h-5 rounded bg-zinc-800 border border-zinc-700"></div>
                     <span class="text-sm font-semibold tracking-tighter text-zinc-400 uppercase">BLACKBOX</span>
                 </a>
                 <span class="text-zinc-800 hidden md:inline">|</span>
                 <nav class="hidden md:flex gap-4">
-                    <a href="/workflow.html" class="text-xs text-zinc-500 hover:text-white transition-colors">Workflow</a>
-                    <a href="/contract.html" class="text-xs text-zinc-500 hover:text-white transition-colors">The Contract</a>
-                    <a href="/skills.html" class="text-xs text-zinc-500 hover:text-white transition-colors">Skills</a>
-                    <a href="/getting-started.html" class="text-xs text-zinc-500 hover:text-white transition-colors">Get Started</a>
+                    <a href={`${base}/workflow.html`} class="text-xs text-zinc-500 hover:text-white transition-colors">Workflow</a>
+                    <a href={`${base}/contract.html`} class="text-xs text-zinc-500 hover:text-white transition-colors">The Contract</a>
+                    <a href={`${base}/skills.html`} class="text-xs text-zinc-500 hover:text-white transition-colors">Skills</a>
+                    <a href={`${base}/getting-started.html`} class="text-xs text-zinc-500 hover:text-white transition-colors">Get Started</a>
                     <a href="https://github.com/elvisnm/blackbox" target="_blank" class="text-xs text-zinc-500 hover:text-white transition-colors">GitHub</a>
                 </nav>
             </div>
