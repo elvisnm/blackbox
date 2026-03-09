@@ -72,3 +72,21 @@ These can be triggered separately:
 | `commit message` | Just step 4 (git diff -> suggest message) |
 | `branch name` | Suggest a branch name based on the work |
 | `simplify` | Just step 2 (review & fix code quality) |
+
+## Troubleshooting
+
+### ESLint fails with errors
+**Cause**: Code has lint violations.
+**Solution**: Fix the issues before proceeding. If they're in files you didn't change, note them but don't block the wrap-up.
+
+### Docker container not running
+**Cause**: `docker-compose.worktree.yml` exists but the container isn't up.
+**Solution**: Fall back to running eslint locally with `npx eslint`. If that also fails, skip linting and note it in the PR doc.
+
+### PR template not found
+**Cause**: `.blackbox/prs/_template.md` doesn't exist.
+**Solution**: Run `bbox init` to set up the structure. Or create the PR doc manually without the template.
+
+### Can't determine blueprint path
+**Cause**: No argument given and branch name doesn't match a blueprint.
+**Solution**: Ask the user for the blueprint path (e.g., `feat/dashboard`).

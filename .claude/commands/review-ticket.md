@@ -50,3 +50,17 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - Open Questions not empty = ALWAYS block. No exceptions.
 - Be specific about what's wrong — not "requirements are vague" but "Requirement 3 says 'improve loading speed' — what's the target? Under 2 seconds? Under 500ms?"
 - This is a helper, not a blocker. If the Product Owner disagrees with a flag, they can override — but log it.
+
+## Troubleshooting
+
+### Invalid Asana URL
+**Cause**: URL doesn't match expected format.
+**Solution**: Ask the user for the correct URL. The task ID is the last numeric segment.
+
+### Ticket doesn't follow the contract template
+**Cause**: The ticket was created without structured sections.
+**Solution**: Review what exists and map to gates as best as possible. Flag missing sections as FAIL with guidance on what to add.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`

@@ -63,3 +63,17 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - ALWAYS ground improvements in actual code — never speculate about how the system works.
 - If you find something unexpected in the codebase, add it to Open Questions rather than assuming.
 - Show changes to the Product Owner before updating the ticket.
+
+## Troubleshooting
+
+### Invalid Asana URL
+**Cause**: URL doesn't match expected format.
+**Solution**: Ask the user for the correct URL. The task ID is the last numeric segment.
+
+### Ticket doesn't follow the contract template
+**Cause**: The ticket was created without the structured template.
+**Solution**: Map existing content to the closest template sections. Flag what's missing and suggest the user fills it in Asana first.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`

@@ -103,3 +103,21 @@ When all phases are complete:
 - Do NOT skip ahead. Work through tasks in order within each phase.
 - Respect the `[deterministic]` vs `[agentic]` distinction.
 - Beads tasks are ephemeral per session. The blueprint is the persistent record.
+
+## Troubleshooting
+
+### Beads not installed (`bd` not found)
+**Cause**: The `bd` CLI is not installed or not in PATH.
+**Solution**: Install Beads or skip task tracking. The blueprint checkboxes are the persistent record — Beads tasks are optional tracking.
+
+### Blueprint has no Implementation Plan
+**Cause**: The blueprint was scaffolded but not refined.
+**Solution**: Run `/refine {type}/{name}` first to research the codebase and generate the Implementation Plan.
+
+### Blueprint not found
+**Cause**: Wrong path or blueprint doesn't exist.
+**Solution**: Run `/status` to list available blueprints.
+
+### All phases already complete
+**Cause**: Every task in the Implementation Plan is already checked off.
+**Solution**: This is normal. The skill suggests next steps: `/review-code` then `/wrap-up`.

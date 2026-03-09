@@ -67,3 +67,25 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
    - Suggest next step: `/refine {type}/{name}` to research the codebase
 
 Do NOT commit automatically. Let the user decide when to commit.
+
+## Troubleshooting
+
+### Invalid Asana URL
+**Cause**: URL doesn't match expected format `https://app.asana.com/0/PROJECT_ID/TASK_ID`.
+**Solution**: Ask the user for the correct URL. The task ID is the last numeric segment.
+
+### Asana task has no description
+**Cause**: The ticket was created without structured content.
+**Solution**: Extract what you can from the task name and comments. Flag all empty sections and suggest the user fills them in Asana first, or proceed with a minimal blueprint.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`
+
+### ASANA_TOKEN not set
+**Cause**: Environment variable missing and MCP is also unavailable.
+**Solution**: Tell the user to set it: `export ASANA_TOKEN=your-token`. The token can be created at https://app.asana.com/0/my-apps.
+
+### Blueprint template not found
+**Cause**: `.blackbox/blueprints/_template.md` doesn't exist.
+**Solution**: Run `bbox init` to set up the Blackbox structure, or ask the user to create the template manually.

@@ -115,3 +115,17 @@ Any other observations or context.
 - Count of comments by severity
 - Overall verdict recommendation
 - Path to the review document
+
+## Troubleshooting
+
+### Branch not found on remote
+**Cause**: The branch hasn't been pushed, or the name is wrong.
+**Solution**: Run `git branch -r` to list remote branches. Ask the user to verify the branch name or PR number.
+
+### `gh` CLI not authenticated
+**Cause**: GitHub CLI not logged in or token expired.
+**Solution**: Run `gh auth login` to authenticate.
+
+### No changes between branches
+**Cause**: The PR branch is identical to the base branch.
+**Solution**: Verify the correct base branch. The branch may have already been merged.

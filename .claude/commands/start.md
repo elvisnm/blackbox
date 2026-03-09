@@ -44,3 +44,13 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
 3. **If the blueprint has no Implementation Plan**, suggest running `/refine {type}/{name}` first.
 
 4. **Do NOT start implementing**. That is `/implement`'s job. `/start` only shows context and prepares the developer.
+
+## Troubleshooting
+
+### Blueprint not found
+**Cause**: Wrong path or blueprint doesn't exist yet.
+**Solution**: Run `/status` to list available blueprints, or `/scaffold` to create one from an Asana ticket.
+
+### Blueprint has no Implementation Plan
+**Cause**: The blueprint was scaffolded but not refined yet.
+**Solution**: Run `/refine {type}/{name}` to research the codebase and fill the Implementation Plan.

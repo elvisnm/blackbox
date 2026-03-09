@@ -79,3 +79,13 @@ This can be:
    ```
    Total: X blueprints
    ```
+
+## Troubleshooting
+
+### No blueprints found
+**Cause**: `.blackbox/blueprints/` directories are empty or don't exist.
+**Solution**: Run `bbox init` to set up the structure, or `/scaffold` to create the first blueprint.
+
+### Blueprint has no Implementation Plan
+**Cause**: The blueprint was scaffolded but not refined.
+**Solution**: Progress will show 0/0 for implementation tasks. Suggest running `/refine {type}/{name}` to fill it.

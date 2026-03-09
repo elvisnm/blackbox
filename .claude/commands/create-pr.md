@@ -57,3 +57,21 @@ Use a HEREDOC for the body to preserve markdown formatting.
 - Show the PR URL to the user
 - Confirm reviewers and assignee were set
 - Confirm blueprint PR link was updated
+
+## Troubleshooting
+
+### `gh` CLI not authenticated
+**Cause**: GitHub CLI not logged in or token expired.
+**Solution**: Run `gh auth login` to authenticate. The user needs a GitHub token with `repo` scope.
+
+### PR document not found
+**Cause**: No PR doc exists in `.blackbox/prs/{type}/{name}.md`.
+**Solution**: Run `/wrap-up` first — it creates the PR document as part of its sequence.
+
+### Branch not pushed
+**Cause**: The current branch has no upstream remote.
+**Solution**: The skill handles this automatically by running `git push -u origin HEAD`. If that fails, check if the remote is configured: `git remote -v`.
+
+### `gh pr create` fails
+**Cause**: Various — branch already has a PR, no commits ahead of base, permission denied.
+**Solution**: Check `gh pr list` to see if a PR already exists (use `/update-pr` instead). Verify the branch has commits ahead of the base branch.

@@ -60,3 +60,17 @@ This should be a brief description of what they want to build or fix (e.g., "add
 - ALWAYS use codebase research to make the ticket specific and grounded.
 - Requirements MUST be testable — not "better error handling" but "show user-friendly error message when API returns 429."
 - Goal MUST be one sentence. If it takes more, the scope is too big.
+
+## Troubleshooting
+
+### Asana MCP unavailable and ASANA_TOKEN not set
+**Cause**: Neither the MCP server nor the environment variable are available.
+**Solution**: Set the env var: `export ASANA_TOKEN=your-token`. The token can be created at https://app.asana.com/0/my-apps.
+
+### Asana project ID unknown
+**Cause**: The curl fallback needs a project ID but it's not configured.
+**Solution**: Ask the user for the Asana project ID. It's in the project URL: `https://app.asana.com/0/PROJECT_ID/...`
+
+### Codebase too large to research effectively
+**Cause**: The repo has many files and it's unclear where to focus.
+**Solution**: Ask the user which directories or modules are relevant. Focus research on those areas.

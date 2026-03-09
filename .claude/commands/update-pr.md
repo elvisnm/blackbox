@@ -43,3 +43,17 @@ Only update title and body -- do NOT change reviewers, assignee, base branch, or
 ### 5. Confirm
 - Show the PR URL to the user
 - Confirm the PR was updated with the latest content from the PR document
+
+## Troubleshooting
+
+### No open PR for current branch
+**Cause**: A PR hasn't been created yet for this branch.
+**Solution**: Run `/create-pr` instead to create a new PR.
+
+### `gh` CLI not authenticated
+**Cause**: GitHub CLI not logged in or token expired.
+**Solution**: Run `gh auth login` to authenticate.
+
+### PR document not found
+**Cause**: No PR doc exists in `.blackbox/prs/{type}/{name}.md`.
+**Solution**: Run `/wrap-up` first to generate the PR document.

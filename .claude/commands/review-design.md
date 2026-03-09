@@ -57,3 +57,17 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 - Be specific about mismatches — not "component doesn't exist" but "`UserCard` was referenced at `components/UserCard.tsx` but the actual path is `components/users/ProfileCard.tsx`."
 - Missing error/loading/empty states is a warning, not a blocker — but always flag it.
 - If Open Questions section is not empty, BLOCK the transition to "Ready for Development."
+
+## Troubleshooting
+
+### Ticket has no UI/UX section
+**Cause**: The UI/UX section was never filled by a Designer.
+**Solution**: Can't review what doesn't exist. Suggest running `/design` first to fill the UI/UX section, or send back to Design.
+
+### Invalid Asana URL
+**Cause**: URL doesn't match expected format.
+**Solution**: Ask the user for the correct URL. The task ID is the last numeric segment.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`

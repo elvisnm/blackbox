@@ -53,3 +53,17 @@ The user provides: $ARGUMENTS (blueprint path, e.g., `feat/dashboard`)
    - Ask if they want to adjust anything before committing
 
 Do NOT commit automatically. Let the user review and commit when ready.
+
+## Troubleshooting
+
+### Blueprint not found
+**Cause**: Wrong path or blueprint doesn't exist yet.
+**Solution**: Run `/status` to list available blueprints, or `/scaffold` to create one from an Asana ticket.
+
+### No package.json / Cargo.toml / go.mod found
+**Cause**: The project root doesn't have a recognizable manifest file.
+**Solution**: Look deeper — check subdirectories for the tech stack. Ask the user which language/framework is used if unclear.
+
+### No related files found in codebase
+**Cause**: Search terms from the blueprint don't match any code.
+**Solution**: Try broader search terms. Read the Goal and Requirements again for alternative keywords. Ask the user to point to relevant files or directories.

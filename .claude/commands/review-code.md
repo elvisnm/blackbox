@@ -57,3 +57,13 @@ After presenting findings, ask: "Want me to fix the blockers?"
 ## Phase 2: Simplify
 
 After the checklist review is complete and any blockers are addressed, run `/simplify` to do a deeper code reuse, quality, and efficiency review of the same changes.
+
+## Troubleshooting
+
+### No changed files (clean working tree)
+**Cause**: All changes are already committed, or no files were modified.
+**Solution**: If changes were committed, use `git diff HEAD~1 --name-only` to review the last commit instead. Ask the user what they want to review.
+
+### ESLint not available
+**Cause**: The project doesn't use ESLint or it's not installed.
+**Solution**: Skip the lint step. The checklist review still covers code quality.

@@ -45,3 +45,17 @@ Examples:
    - Remind: "When the ticket comes back as 'Ready for Development', run `/refresh {type}/{name}` to pull the updates into the blueprint."
 
 Do NOT modify the blueprint itself. The blueprint stays as-is until `/refresh` is run after the ticket returns.
+
+## Troubleshooting
+
+### Blueprint has no Asana URL
+**Cause**: The `> **Asana:**` field is empty or missing in the blueprint header.
+**Solution**: Ask the user for the Asana ticket URL.
+
+### Asana status update fails
+**Cause**: The status/section name doesn't match the project's custom fields, or permissions are insufficient.
+**Solution**: Try updating via comment only. Ask the user to manually change the status in Asana and confirm.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`

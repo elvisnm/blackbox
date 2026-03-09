@@ -87,3 +87,17 @@ Files attached to this ticket:
 - ALWAYS reference components by their actual name and file path from the codebase — not "use a modal" but "use `Dialog` from `frontend/components/Dialog.tsx`."
 - Preserve all existing ticket sections when updating — only fill/modify the UI/UX section.
 - If the ticket's Goal or Requirements are unclear, send back to Product Owner rather than guessing.
+
+## Troubleshooting
+
+### Asana task has no Requirements section
+**Cause**: The ticket was created without structured content or skipped requirements.
+**Solution**: Send back to Product Owner with `/send-back` — design can't proceed without clear requirements.
+
+### No UI components found in codebase
+**Cause**: The project may not have a component library, or components are organized differently.
+**Solution**: Search for common patterns: `components/`, `ui/`, `shared/`. Ask the user where components live.
+
+### Asana MCP unavailable
+**Cause**: MCP server not connected or credentials expired.
+**Solution**: Falls back to curl with `$ASANA_TOKEN`. Ensure the env var is set: `export ASANA_TOKEN=your-token`
