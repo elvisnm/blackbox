@@ -27,19 +27,8 @@ The user provides: $ARGUMENTS (optional -- blueprint path like `feat/dashboard`)
 Read the file from `.blackbox/prs/{type}/{name}.md`.
 
 Extract:
-- **Title**: The text under the `# Title` heading (first H1). This becomes the new PR title. Do NOT include it in the body. The title MUST start with a prefix:
-  - Bugfix -> `Fix: <title>`
-  - New feature -> `Feat: <title>`
-  - Enhancement -> `Enhance: <title>`
-  - Refactoring -> `Refactor: <title>`
-  - Hotfix -> `HOTFIX: <title>`
-  - Updating dependencies -> `Deps: <title>`
-- **Body**: Everything from `## Type of change` onward. Do NOT include the `# Title` heading, the `> **Blueprint:**` line, or any HTML comments in the body.
-- **Add icons to headings** when building the body for GitHub:
-  - `## Type of change` -> `## :loudspeaker: Type of change`
-  - `## Description` -> `## :scroll: Description`
-  - `## Context` -> `## :bulb: Context`
-  - `## Testing` -> `## :green_heart: Testing`
+- **Title**: The text under the `# Title` heading (first H1). This becomes the new PR title. Do NOT include it in the body. Apply title prefix and body formatting rules from `references/pr-conventions.md`.
+- **Body**: Everything from `## Type of change` onward. Apply heading icons and body rules from `references/pr-conventions.md`.
 
 ### 4. Update the PR
 ```bash

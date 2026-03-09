@@ -26,53 +26,9 @@ This should be a brief description of what they want to build or fix (e.g., "add
    - Describe current behavior based on what the code actually does
    - Identify existing components or patterns that relate to this work
 
-3. **Fill the ticket template** with structured content:
+3. **Fill the ticket template** using the structure defined in `references/contract-template-guide.md`. Include all required sections (Goal, Context, Requirements, UI/UX, Constraints, Open Questions).
 
-```markdown
-## Goal
-
-What are we building and why? One clear sentence.
-
-## Context
-
-### Background
-
-Why does this matter? What triggered this work? Who reported it?
-
-### Current Behavior
-
-How does the system work today? Be specific — reference pages, buttons, API endpoints, error messages.
-
-### Desired Behavior
-
-How should it work after this change? Same level of specificity.
-
-## Requirements
-
-Testable acceptance criteria. Each one verifiable.
-
-- [ ] Requirement 1
-- [ ] Requirement 2
-- [ ] Requirement 3
-
-## UI/UX
-
-> Filled by Designer. Leave empty or N/A if routing directly to development.
-
-## Constraints
-
-Non-negotiable rules. Performance budgets, browser support, backwards compatibility.
-
-## Open Questions
-
-Anything unresolved. MUST be empty before "Ready for Development."
-```
-
-4. **Determine the ticket type** from the content:
-   - New functionality -> `feat`
-   - Something broken -> `fix`
-   - Enhancement to existing behavior -> `improve`
-   - Urgent production issue -> `hotfix`
+4. **Determine the ticket type** from the content using the type mapping in `references/contract-template-guide.md`.
 
 5. **Create the ticket in Asana** using the Asana MCP tools:
    - Set the description following the template above

@@ -24,31 +24,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
      "https://app.asana.com/api/1.0/tasks/{task_id}?opt_fields=name,notes,custom_fields"
    ```
 
-3. **Parse the ticket** and check each quality gate:
-
-   ### Gate 1: Goal
-   - [ ] Goal section exists and is not empty
-   - [ ] Goal is one clear sentence (not a paragraph)
-   - [ ] Goal describes both WHAT and WHY
-
-   ### Gate 2: Context
-   - [ ] Background section explains why this work matters
-   - [ ] Current Behavior is specific (references pages, endpoints, error messages — not vague)
-   - [ ] Desired Behavior is specific (same level of detail as Current Behavior)
-
-   ### Gate 3: Requirements
-   - [ ] Requirements section has at least one item
-   - [ ] Each requirement is testable (someone can definitively say "yes" or "no")
-   - [ ] No vague requirements ("improve performance", "better UX", "handle errors properly")
-
-   ### Gate 4: Constraints
-   - [ ] Constraints section exists (can be N/A if genuinely none)
-
-   ### Gate 5: Open Questions
-   - [ ] Open Questions section is empty (HARD GATE — blocks all transitions)
-
-   ### Gate 6: UI/UX (if routing through design)
-   - [ ] UI/UX section is either filled or explicitly marked N/A
+3. **Parse the ticket** and check each quality gate defined in `references/quality-gates.md` (Gates 1-6: Goal, Context, Requirements, Constraints, Open Questions, UI/UX).
 
 4. **Present the review** to the Product Owner:
 

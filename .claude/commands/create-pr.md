@@ -24,19 +24,8 @@ Read the file from `.blackbox/prs/{type}/{name}.md`.
 
 ### 3. Parse the Document
 Extract:
-- **Title**: The text under the `# Title` heading (first H1). This becomes the `--title` for `gh pr create`. Do NOT include it in the body. The title MUST start with a prefix:
-  - Bugfix -> `Fix: <title>`
-  - New feature -> `Feat: <title>`
-  - Enhancement -> `Enhance: <title>`
-  - Refactoring -> `Refactor: <title>`
-  - Hotfix -> `HOTFIX: <title>`
-  - Updating dependencies -> `Deps: <title>`
-- **Body**: Everything from `## Type of change` onward. Do NOT include the `# Title` heading, the `> **Blueprint:**` line, or any HTML comments in the body.
-- **Add icons to headings** when building the body for GitHub:
-  - `## Type of change` -> `## :loudspeaker: Type of change`
-  - `## Description` -> `## :scroll: Description`
-  - `## Context` -> `## :bulb: Context`
-  - `## Testing` -> `## :green_heart: Testing`
+- **Title**: The text under the `# Title` heading (first H1). This becomes the `--title` for `gh pr create`. Do NOT include it in the body. Apply title prefix and body formatting rules from `references/pr-conventions.md`.
+- **Body**: Everything from `## Type of change` onward. Apply heading icons and body rules from `references/pr-conventions.md`.
 
 ### 4. Ensure Branch is Pushed
 - Check if the current branch has an upstream: `git rev-parse --abbrev-ref @{upstream}`

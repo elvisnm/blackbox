@@ -25,13 +25,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
      "https://app.asana.com/api/1.0/tasks/{task_id}?opt_fields=name,notes,custom_fields,tags.name"
    ```
 
-3. **Parse the ticket** expecting the contract template sections:
-   - `## Goal`
-   - `## Context` > `### Background`, `### Current Behavior`, `### Desired Behavior`
-   - `## Requirements`
-   - `## UI/UX`
-   - `## Constraints`
-   - `## Open Questions`
+3. **Parse the ticket** expecting the contract template sections defined in `references/contract-template-guide.md` (Goal, Context, Requirements, UI/UX, Constraints, Open Questions).
 
 4. **Research the codebase** (read-only) to improve each section:
 

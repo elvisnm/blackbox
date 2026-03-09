@@ -29,34 +29,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
    - Component Choices (reuse existing + new components)
    - Mockup references
 
-4. **Validate each component reference** against the codebase:
-
-   ### Check 1: Component Existence
-   - [ ] Every referenced component actually exists at the specified path
-   - [ ] Component names match exactly (case-sensitive)
-   - [ ] File paths are correct
-
-   ### Check 2: Component Compatibility
-   - [ ] Referenced components support the described use case
-   - [ ] Props/inputs needed are available on the component
-   - [ ] Components work together (no conflicting patterns)
-
-   ### Check 3: Pattern Consistency
-   - [ ] New components follow existing naming conventions
-   - [ ] Proposed interactions match how similar features work in the codebase
-   - [ ] Styling approach is consistent with the project's conventions
-
-   ### Check 4: Completeness
-   - [ ] All screens in the flow are covered
-   - [ ] Error states are addressed
-   - [ ] Loading states are addressed
-   - [ ] Empty states are addressed (if applicable)
-   - [ ] Responsive behavior is specified (if applicable)
-
-   ### Check 5: Handoff Readiness
-   - [ ] Developer can build this without ambiguity
-   - [ ] No references to components that don't exist without explaining what to build
-   - [ ] Mockups are attached (if referenced)
+4. **Validate each component reference** against the codebase using the checks defined in `references/design-validation-checks.md` (Checks 1-5: Component Existence, Compatibility, Pattern Consistency, Completeness, Handoff Readiness).
 
 5. **Present the review** to the Designer:
 

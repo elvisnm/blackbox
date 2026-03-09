@@ -31,12 +31,7 @@ Read each changed file in FULL (not just the diff). You need the complete file c
 
 ### 4. Review Against Checklist
 
-- **Style**: `.js` uses `snake_case`, `.tsx/.ts` uses `camelCase`/`PascalCase`, no unnecessary camelCase (except external API requirements), follows codebase patterns
-- **Quality**: no bugs, proper error handling, no dead code, no hardcoded values, no unused imports
-- **Security**: no exposed secrets, input validation, no injection vulnerabilities, proper authentication/authorization checks
-- **Performance**: no N+1 queries, proper async/await, no memory leaks
-- **Tests**: added for new functionality, `snake_case` helpers in `.js`, edge cases covered
-- **Docs**: JSDoc for public functions, complex logic has explanatory comments (sparingly)
+Consult `references/review-checklist.md` for the full checklist (Code Style, Code Quality, Security, Performance, Tests, Docs).
 
 ### 5. Write Comments
 
