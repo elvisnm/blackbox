@@ -4,6 +4,9 @@
 blackbox/
   CLAUDE.md                       # Project instructions for Claude
   README.md                       # Project overview
+  .github/
+    workflows/
+      deploy-docs.yml             # GitHub Actions: build & deploy site to Pages
   bin/                            # CLI entry point (bbox)
     bbox                          # Shell wrapper
     bbox.ts                       # Subcommand router
@@ -13,12 +16,21 @@ blackbox/
     lib/
       config.ts                   # ~/.blackbox/config.json reader/writer
   dashboard/                      # Dashboard web app (Vite + React + TypeScript + shadcn/ui)
-  docs/                           # Documentation
+  site/                           # Documentation site (Astro + Tailwind CSS 4)
+    astro.config.mjs              # Astro config (GitHub Pages base path)
+    src/
+      layouts/BaseLayout.astro    # Shared layout (head, nav, footer, animations)
+      components/                 # Reusable components (Nav, Footer, BackgroundAccents)
+      pages/                      # Site pages (index, workflow, contract, skills, getting-started)
+      styles/global.css           # Tailwind + custom styles
+    public/                       # Static assets (images)
+  docs/                           # Documentation (markdown)
     concept.md                    # Vision and principles
     roles.md                      # Role definitions (PO, DESIGN, DEV, QA)
     setup.md                      # Setup guide
     workflow.md                   # Workflow documentation
     spec.md                       # System specification
+    project-structure.md          # This file
     asana-ticket-template.md      # Asana ticket contract template
     claude-templates/             # Role-specific CLAUDE.md templates
       CLAUDE_PO.md                # Product Owner Claude config
