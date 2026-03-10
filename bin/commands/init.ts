@@ -3,6 +3,7 @@ import { execSync } from 'node:child_process';
 import { existsSync, mkdirSync, copyFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { readConfig, writeConfig } from '../lib/config.js';
+import { checkRepoVisibility } from '../lib/github.js';
 
 export const BLUEPRINT_CATEGORIES = ['feat', 'fix', 'improve', 'hotfix'];
 
@@ -242,6 +243,36 @@ export async function init(blackboxRoot: string, pathArg?: string) {
         }
       } catch {
         // No remote or config write failed — not critical
+      }
+    }
+
+    // Check if repo is accessible on GitHub (for dashboard)
+    if (config.repos.length > 0) {
+      const lastRepo = config.repos[config.repos.length - 1];
+      const repoSlug = `${lastRepo.owner}/${lastRepo.repo}`;
+
+      if (!config.token) {
+        const result = await checkRepoVisibility(repoSlug);
+
+        if (result.status === 'not-found') {
+          p.log.warn(`${repoSlug} is not publicly accessible on GitHub.`);
+          p.log.info('The dashboard needs a GitHub token to access private repos.');
+
+          const tokenInput = await p.text({
+            message: 'GitHub token (or press Enter to skip):',
+            placeholder: 'ghp_...',
+            defaultValue: '',
+          });
+
+          if (!p.isCancel(tokenInput) && tokenInput) {
+            config.token = tokenInput;
+            p.log.success(`GitHub token saved: ${tokenInput.slice(0, 8)}...`);
+          } else {
+            p.log.info('Skipped. You can add it later with: bbox set token ghp_your-token');
+          }
+        } else if (result.status === 'public') {
+          p.log.success(`${repoSlug} is public — dashboard will work without a token`);
+        }
       }
     }
 

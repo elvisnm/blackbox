@@ -20,6 +20,7 @@ import TypeBadge from "@/components/TypeBadge";
 import BlueprintListSkeleton from "@/components/BlueprintListSkeleton";
 import EmptyState from "@/components/EmptyState";
 import { useBlueprints, type BlueprintListItem } from "@/hooks/useBlueprints";
+import config from "@/config";
 import type { BlueprintType } from "@/services/parser";
 import { BLUEPRINT_TYPES } from "@/services/github";
 import { formatDate } from "@/utils/formatDate";
@@ -64,8 +65,9 @@ export default function ListView() {
 
   const projects = useMemo(() => {
     const set = new Set(
-      blueprints.map((b) => `${b.repo.owner}/${b.repo.repo}`)
+      config.repos.map((r) => `${r.owner}/${r.repo}`)
     );
+    blueprints.forEach((b) => set.add(`${b.repo.owner}/${b.repo.repo}`));
     return Array.from(set).sort();
   }, [blueprints]);
 
@@ -170,7 +172,7 @@ export default function ListView() {
       ) : filtered.length === 0 && blueprints.length === 0 ? (
         <EmptyState
           title="No blueprints found"
-          description="No blueprints were found across configured repos. Make sure your repos have a .blackbox/blueprints/ folder with blueprint files."
+          description={`${config.repos.length} repo(s) configured but no blueprints were found. Make sure .blackbox/blueprints/ is committed and pushed to GitHub. Run bbox check to verify your setup.`}
           action={
             <button
               onClick={refresh}
@@ -183,7 +185,11 @@ export default function ListView() {
       ) : filtered.length === 0 ? (
         <EmptyState
           title="No matches"
-          description="No blueprints match the current filters. Try adjusting your type or project filters."
+          description={
+            projectFilter !== "all"
+              ? `No blueprints found in ${projectFilter}. This project may not have any blueprints yet. Use /scaffold to create one.`
+              : "No blueprints match the current filters. Try adjusting your type or project filters."
+          }
         />
       ) : (
         <Table>

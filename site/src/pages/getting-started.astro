@@ -86,15 +86,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">3</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Set Asana Token</h3>
                     </div>
-                    <p class="text-base text-zinc-400 mb-6">Required for <span class="font-mono text-sm text-zinc-300">/scaffold</span>, <span class="font-mono text-sm text-zinc-300">/refresh</span>, and <span class="font-mono text-sm text-zinc-300">/send-back</span>. Find this in Asana &gt; My Settings &gt; Apps &gt; Developer Apps.</p>
-                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                    <p class="text-base text-zinc-400 mb-6">Required for <span class="font-mono text-sm text-zinc-300">/scaffold</span>, <span class="font-mono text-sm text-zinc-300">/refresh</span>, <span class="font-mono text-sm text-zinc-300">/send-back</span>, and all ticket management skills.</p>
+                    <ol class="text-sm text-zinc-400 space-y-2 mb-6 list-decimal list-inside">
+                        <li>In Asana, go to <span class="text-zinc-300">My Settings</span> &rarr; <span class="text-zinc-300">Apps</span> &rarr; <span class="text-zinc-300">Developer Apps</span></li>
+                        <li>Under <span class="text-zinc-300">Personal Access Tokens</span>, click <span class="text-zinc-300">Create New Token</span></li>
+                        <li>Give it a name (e.g., "Blackbox") and copy the generated token</li>
+                    </ol>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden mb-4">
                         <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                             <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                             <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                         </div>
-                        <div class="p-4 overflow-x-auto">
-                            <code class="font-mono text-sm text-zinc-300"><span class="text-purple-400">export</span> ASANA_TOKEN=<span class="text-emerald-400">"your-token"</span></code>
+                        <div class="p-4 overflow-x-auto space-y-3">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs text-zinc-500 font-mono"># Set the token in your current session</span>
+                                <code class="font-mono text-sm text-zinc-300"><span class="text-purple-400">export</span> ASANA_TOKEN=<span class="text-emerald-400">"your-token"</span></code>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs text-zinc-500 font-mono"># Persist across sessions (zsh — default on macOS)</span>
+                                <code class="font-mono text-sm text-zinc-300"><span class="text-purple-400">echo</span> <span class="text-emerald-400">'export ASANA_TOKEN="your-token"'</span> >> ~/.zshrc && <span class="text-blue-400">source</span> ~/.zshrc</code>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs text-zinc-500 font-mono"># Persist across sessions (bash)</span>
+                                <code class="font-mono text-sm text-zinc-300"><span class="text-purple-400">echo</span> <span class="text-emerald-400">'export ASANA_TOKEN="your-token"'</span> >> ~/.bashrc && <span class="text-blue-400">source</span> ~/.bashrc</code>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +118,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <!-- Step 4 -->
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">4</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-sm font-semibold text-blue-400">4</div>
+                        <h3 class="text-xl font-semibold tracking-tight text-white">Verify Your Setup</h3>
+                    </div>
+                    <p class="text-base text-zinc-400 mb-6">Run the health check to confirm everything is configured correctly.</p>
+                    <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <code class="font-mono text-sm text-blue-400">bbox check</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-semibold text-zinc-400">5</div>
                         <h3 class="text-xl font-semibold tracking-tight text-white">Add Repo <span class="text-sm font-medium text-zinc-500 ml-2">(Optional)</span></h3>
                     </div>
                     <p class="text-base text-zinc-400 mb-6">Links your repository to the dashboard. This is auto-detected during initialization if a git remote exists.</p>
@@ -315,6 +350,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <section class="max-w-6xl mx-auto px-6 mb-32 fade-up">
             <h2 class="text-3xl font-semibold tracking-tight text-white mb-8">Dashboard Setup <span class="text-lg font-medium text-zinc-500 ml-2">(Optional)</span></h2>
 
+            <div class="p-5 rounded-xl bg-amber-500/5 border border-amber-500/20 flex items-start gap-4 mb-6">
+                <iconify-icon icon="solar:danger-triangle-linear" class="text-xl text-amber-400 shrink-0 mt-0.5"></iconify-icon>
+                <p class="text-sm text-zinc-300 leading-relaxed">
+                    The dashboard reads blueprint data from <strong class="text-white">GitHub</strong>, not your local filesystem. Your project's <span class="font-mono text-zinc-300">.blackbox/</span> directory must be committed and pushed to GitHub for the dashboard to display it. Private repos require a GitHub token.
+                </p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-blue-500/5 border border-blue-500/20 flex items-start gap-4 mb-6">
+                <iconify-icon icon="solar:info-circle-linear" class="text-xl text-blue-400 shrink-0 mt-0.5"></iconify-icon>
+                <div class="text-sm text-zinc-300 leading-relaxed">
+                    <p class="mb-3"><strong class="text-white">How to get a GitHub token:</strong></p>
+                    <ol class="list-decimal list-inside space-y-2 text-zinc-400">
+                        <li>Go to GitHub &rarr; <span class="text-zinc-300">Settings</span> &rarr; <span class="text-zinc-300">Developer settings</span> &rarr; <span class="text-zinc-300">Personal access tokens</span> &rarr; <span class="text-zinc-300">Tokens (classic)</span></li>
+                        <li>Click <span class="text-zinc-300">Generate new token (classic)</span></li>
+                        <li>Name it (e.g., "Blackbox Dashboard") and select the <span class="font-mono text-zinc-300">repo</span> scope for private repos</li>
+                        <li>Click <span class="text-zinc-300">Generate token</span> and copy it (starts with <span class="font-mono text-zinc-300">ghp_</span>)</li>
+                    </ol>
+                </div>
+            </div>
+
             <div class="rounded-xl border border-white/10 bg-[#0d0d12] overflow-hidden shadow-2xl">
                 <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#111116]">
                     <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -328,16 +383,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <code class="font-mono text-sm text-zinc-300">cd blackbox/dashboard && npm install</code>
                     </div>
                     <div class="flex flex-col gap-1">
-                        <span class="text-xs text-zinc-500 font-mono"># 2. Add repos</span>
+                        <span class="text-xs text-zinc-500 font-mono"># 2. Make sure .blackbox/ is committed and pushed to GitHub</span>
+                        <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">git add</span> .blackbox/ && <span class="text-blue-400">git commit</span> -m <span class="text-emerald-400">"add blackbox blueprints"</span> && <span class="text-blue-400">git push</span></code>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 3. Add repos to track</span>
                         <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox add-repo</span> owner/repo --branch main</code>
                     </div>
                     <div class="flex flex-col gap-1">
-                        <span class="text-xs text-zinc-500 font-mono"># 3. Add GitHub token (Optional: increases API limit)</span>
+                        <span class="text-xs text-zinc-500 font-mono"># 4. Add GitHub token (required for private repos, optional for public)</span>
                         <code class="font-mono text-sm text-zinc-300"><span class="text-blue-400">bbox set token</span> ghp_your-token</code>
                     </div>
                     <div class="flex flex-col gap-1">
-                        <span class="text-xs text-zinc-500 font-mono"># 4. Run dashboard</span>
+                        <span class="text-xs text-zinc-500 font-mono"># 5. Run dashboard</span>
                         <code class="font-mono text-sm text-zinc-300">npm run dev <span class="text-zinc-500">→ opens at localhost:5173</span></code>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-xs text-zinc-500 font-mono"># 6. Verify setup</span>
+                        <code class="font-mono text-sm text-blue-400">bbox check</code>
                     </div>
                 </div>
             </div>

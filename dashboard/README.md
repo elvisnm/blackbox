@@ -59,3 +59,12 @@ npm run lint      # Run ESLint
 - **react-markdown** + remark/rehype plugins — blueprint rendering
 - **diff2html** — blueprint diff visualization
 - **lucide-react** — icons
+
+## Troubleshooting
+
+If the dashboard shows no blueprints or is missing a repo:
+
+1. Run `bbox check` to verify your setup
+2. Make sure `.blackbox/` is committed and pushed to GitHub
+3. For private repos, add a GitHub token: `bbox set token ghp_your-token`
+4. Restart the dashboard after config changes: `npm run dev`

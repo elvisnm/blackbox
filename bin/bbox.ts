@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { init } from './commands/init.js';
 import { addRepo, removeRepo, listRepos, setConfigValue } from './commands/config.js';
+import { check } from './commands/check.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,6 +27,7 @@ const HELP = `Usage: bbox <command> [options]
 
 Commands:
   init [path]                        Install Blackbox into a project
+  check                              Verify setup (tokens, repos, GitHub access)
   add-repo owner/repo [--branch name]  Add a repo to the dashboard
   remove-repo owner/repo               Remove a repo from the dashboard
   list-repos                           List configured repos
@@ -58,6 +60,10 @@ switch (command) {
 
   case 'list-repos':
     listRepos();
+    break;
+
+  case 'check':
+    await check();
     break;
 
   case 'set':

@@ -13,8 +13,10 @@ blackbox/
     commands/
       init.ts                     # bbox init logic
       config.ts                   # bbox config commands (add-repo, remove-repo, etc.)
+      check.ts                    # bbox check command (health check)
     lib/
       config.ts                   # ~/.blackbox/config.json reader/writer
+      github.ts                   # GitHub API helpers (repo visibility check)
   dashboard/                      # Dashboard web app (Vite + React + TypeScript + shadcn/ui)
   site/                           # Documentation site (Astro + Tailwind CSS 4)
     astro.config.mjs              # Astro config (GitHub Pages base path)

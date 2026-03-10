@@ -47,7 +47,8 @@ See `docs/concept.md` for the vision and principles. See `docs/project-structure
 - `/status [type/name]` — List blueprints with progress counts
 
 ### CLI (`bbox`)
-- `bbox init [path]` — Install Blackbox into a project
+- `bbox init [path]` — Install Blackbox into a project (detects private repos, prompts for GitHub token)
+- `bbox check` — Verify setup (tokens, repo access, GitHub visibility)
 - `bbox add-repo owner/repo [--branch name]` — Add a repo to the dashboard config
 - `bbox remove-repo owner/repo` — Remove a repo from the dashboard config
 - `bbox list-repos` — List configured repos
