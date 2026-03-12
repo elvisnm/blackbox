@@ -15,21 +15,20 @@ These files are committed to the repo so every PO/DESIGN who clones gets the sam
 
 ## Instructions
 
-### Step 1: Verify Prerequisites
+### Step 1: Verify Prerequisites and Read Templates
 
-Check that:
-1. `.blackbox/roles/` exists in the target project. If not, tell the user to run `bbox init` first.
-2. `docs/claude-templates/CLAUDE_PO.md` and `docs/claude-templates/CLAUDE_DESIGN.md` exist in the blackbox repo. If not, tell the user the templates are missing.
+Do all of the following in a **single parallel tool call**:
 
-If either check fails, stop and explain — do not launch agents.
+1. **Check roles directory**: Run `test -d .blackbox/roles/ && echo "EXISTS" || echo "MISSING"` via Bash. If MISSING, tell the user to run `bbox init` first and stop.
 
-### Step 2: Read the Templates
+2. **Find and read templates**: The templates live in the **blackbox repo** (where the skills were installed from), NOT in the target project. To locate them:
+   - First check if `docs/claude-templates/CLAUDE_PO.md` exists locally (in case this IS the blackbox repo)
+   - If not found, search for the blackbox repo: `find ~/dev -maxdepth 3 -path "*/docs/claude-templates/CLAUDE_PO.md" -print -quit 2>/dev/null`
+   - Read both templates: `{blackbox-root}/docs/claude-templates/CLAUDE_PO.md` and `{blackbox-root}/docs/claude-templates/CLAUDE_DESIGN.md`
 
-Read the base templates that define the structure for each role:
-- `docs/claude-templates/CLAUDE_PO.md` — PO template skeleton
-- `docs/claude-templates/CLAUDE_DESIGN.md` — DESIGN template skeleton
+If either the roles directory or the templates are missing, stop and explain — do not launch agents.
 
-These templates have placeholder sections (e.g., `[PROJECT NAME]`, generic "Where to Find Things"). The agents will fill these with project-specific content.
+The templates have placeholder sections (e.g., `[PROJECT NAME]`, generic "Where to Find Things"). The agents will fill these with project-specific content.
 
 ### Step 3: Launch Two Research Agents in Parallel
 
