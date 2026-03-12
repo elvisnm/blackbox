@@ -20,9 +20,11 @@ This can be either:
 
 ## Phase 1: Detect Input & Load Content
 
+0. **Validate Asana access** — follow `references/asana-api-guide.md` Step 0 to verify the token is set. If missing, stop and tell the user.
+
 ### If Asana URL:
 1. Extract the task ID by running `bash .claude/scripts/parse-asana-url.sh {url}`
-2. Fetch the task using Asana MCP tools (or curl fallback with `$ASANA_TOKEN`):
+2. Fetch the task using Asana MCP tools (or curl fallback with `$ASANA_TOKEN`). For Asana API patterns (creating/reading/updating tasks, setting custom fields), see `references/asana-api-guide.md`.
    ```
    curl -s -H "Authorization: Bearer $ASANA_TOKEN" \
      "https://app.asana.com/api/1.0/tasks/{task_id}?opt_fields=name,notes,custom_fields,tags.name"

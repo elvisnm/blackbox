@@ -13,32 +13,34 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 
 ## Instructions
 
-1. **Extract the Asana task ID** by running `bash .claude/scripts/parse-asana-url.sh {url}`. This returns JSON with `task_id` and optionally `project_id`.
+1. **Validate Asana access** — follow `references/asana-api-guide.md` Step 0 to verify the token is set. If missing, stop and tell the user.
 
-2. **Fetch the Asana task** using the Asana MCP tools:
+2. **Extract the Asana task ID** by running `bash .claude/scripts/parse-asana-url.sh {url}`. This returns JSON with `task_id` and optionally `project_id`.
+
+3. **Fetch the Asana task** using the Asana MCP tools:
    - Get the task details (name, notes, custom fields)
 
-   If Asana MCP is not available, fall back to curl:
+   If Asana MCP is not available, fall back to curl. For Asana API patterns (creating/reading/updating tasks, setting custom fields), see `references/asana-api-guide.md`.
    ```
    curl -s -H "Authorization: Bearer $ASANA_TOKEN" \
      "https://app.asana.com/api/1.0/tasks/{task_id}?opt_fields=name,notes,custom_fields"
    ```
 
-3. **Parse the UI/UX section** of the ticket. Extract:
+4. **Parse the UI/UX section** of the ticket. Extract:
    - Screens / Flows
    - Component Choices (reuse existing + new components)
    - Mockup references
 
-4. **Validate each component reference** against the codebase using the checks defined in `references/design-validation-checks.md` (Checks 1-5: Component Existence, Compatibility, Pattern Consistency, Completeness, Handoff Readiness).
+5. **Validate each component reference** against the codebase using the checks defined in `references/design-validation-checks.md` (Checks 1-5: Component Existence, Compatibility, Pattern Consistency, Completeness, Handoff Readiness).
 
-5. **Present the review** to the Designer:
+6. **Present the review** to the Designer:
 
    For each check, show:
    - PASS or FAIL
    - Specific issues found (if FAIL)
    - Suggestions — e.g., "You referenced `Modal` but the project uses `Dialog` from `components/Dialog.tsx`"
 
-6. **Determine readiness**:
+7. **Determine readiness**:
 
    **All checks pass** -> Tell the Designer the spec is ready. Suggest moving to "Ready for Development."
 
@@ -47,7 +49,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
    - Send back to Product Owner if requirements are the problem
    - Override and proceed (log the decision in a comment)
 
-7. **If approved, update the Asana ticket**:
+8. **If approved, update the Asana ticket**:
    - Set status to "Ready for Development"
    - Add a comment: "Design reviewed and approved — ready for development"
 

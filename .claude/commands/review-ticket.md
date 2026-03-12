@@ -13,27 +13,29 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 
 ## Instructions
 
-1. **Extract the Asana task ID** by running `bash .claude/scripts/parse-asana-url.sh {url}`. This returns JSON with `task_id` and optionally `project_id`.
+1. **Validate Asana access** — follow `references/asana-api-guide.md` Step 0 to verify the token is set. If missing, stop and tell the user.
 
-2. **Fetch the Asana task** using the Asana MCP tools:
+2. **Extract the Asana task ID** by running `bash .claude/scripts/parse-asana-url.sh {url}`. This returns JSON with `task_id` and optionally `project_id`.
+
+3. **Fetch the Asana task** using the Asana MCP tools:
    - Get the task details (name, notes, custom fields)
 
-   If Asana MCP is not available, fall back to curl:
+   If Asana MCP is not available, fall back to curl. For Asana API patterns (creating/reading/updating tasks, setting custom fields), see `references/asana-api-guide.md`.
    ```
    curl -s -H "Authorization: Bearer $ASANA_TOKEN" \
      "https://app.asana.com/api/1.0/tasks/{task_id}?opt_fields=name,notes,custom_fields"
    ```
 
-3. **Parse the ticket** and check each quality gate defined in `references/quality-gates.md` (Gates 1-6: Goal, Context, Requirements, Constraints, Open Questions, UI/UX).
+4. **Parse the ticket** and check each quality gate defined in `references/quality-gates.md` (Gates 1-6: Goal, Context, Requirements, Constraints, Open Questions, UI/UX).
 
-4. **Present the review** to the Product Owner:
+5. **Present the review** to the Product Owner:
 
    For each gate, show:
    - PASS or FAIL
    - Specific issues found (if FAIL)
    - Suggestions for improvement
 
-5. **Determine readiness**:
+6. **Determine readiness**:
 
    **All gates pass** -> Tell the Product Owner the ticket is ready. Ask which transition:
    - "Ready for Design" (if UI/UX work is needed)
@@ -41,7 +43,7 @@ This should be an Asana task URL (e.g., https://app.asana.com/0/PROJECT_ID/TASK_
 
    **Any gate fails** -> Tell the Product Owner: "This ticket isn't ready yet. The following need attention: [list issues]." Do NOT update the status.
 
-6. **If approved, update the Asana ticket status** to the chosen transition.
+7. **If approved, update the Asana ticket status** to the chosen transition.
    - Add a comment: "Ticket reviewed and approved — moved to [new status]"
 
 ## Rules

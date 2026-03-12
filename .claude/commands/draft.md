@@ -13,43 +13,39 @@ This should be a brief description of what they want to build or fix (e.g., "add
 
 ## Instructions
 
-1. **Discuss the idea** with the Product Owner. Ask clarifying questions to understand:
+1. **Validate Asana access** before anything else. Follow `references/asana-api-guide.md` Step 0 (token check) and Step 1 (resolve workspace/project from config). If the token is missing, stop immediately — don't start the discussion without it.
+
+2. **Discuss the idea** with the Product Owner. Ask clarifying questions to understand:
    - What are we building and why?
    - What triggered this work?
    - What does the system do today?
    - What should it do after this change?
    - Are there any non-negotiable constraints?
 
-2. **Research the codebase** (read-only) to ground the ticket in reality:
+3. **Research the codebase** (read-only) to ground the ticket in reality:
    - Use `Read`, `Glob`, `Grep` to find relevant code
    - Reference actual pages, buttons, API endpoints, data models
    - Describe current behavior based on what the code actually does
    - Identify existing components or patterns that relate to this work
 
-3. **Fill the ticket template** using the structure defined in `references/contract-template-guide.md`. Include all required sections (Goal, Context, Requirements, UI/UX, Constraints, Open Questions).
+4. **Fill the ticket template** using the structure defined in `references/contract-template-guide.md`. Include all required sections (Goal, Context, Requirements, UI/UX, Constraints, Open Questions).
 
-4. **Determine the ticket type** from the content using the type mapping in `references/contract-template-guide.md`.
+5. **Determine the ticket type** from the content using the type mapping in `references/contract-template-guide.md`.
 
-5. **Create the ticket in Asana** using the Asana MCP tools:
-   - Set the description following the template above
-   - Set custom fields: Type, Priority
-   - Set status to "Draft"
-
-   If Asana MCP is not available, fall back to curl:
-   ```
-   curl -s -H "Authorization: Bearer $ASANA_TOKEN" \
-     -X POST "https://app.asana.com/api/1.0/tasks" \
-     -H "Content-Type: application/json" \
-     -d '{"data": {"name": "TICKET_NAME", "notes": "TICKET_BODY", "projects": ["PROJECT_ID"]}}'
-   ```
-
-6. **Warn about weak sections** but still create the ticket. Flag:
+6. **Warn about weak sections** before creating the ticket. Flag:
    - Vague requirements ("improve performance" instead of measurable criteria)
    - Missing current/desired behavior
    - Empty sections that should be filled
    - Goal that is more than one sentence (scope may be too big — suggest splitting)
 
-7. **Show the result** to the Product Owner:
+7. **Create the ticket in Asana** following `references/asana-api-guide.md`:
+   - Use the workspace and project IDs resolved in step 1
+   - Always use `notes` (plain text), NEVER `html_notes`
+   - Set custom fields: Type, Priority
+   - Move to "Draft" section (if it exists; otherwise use the first section and note it)
+   - If the scope is large enough for an epic with sub-tickets, create them with dependencies
+
+8. **Show the result** to the Product Owner:
    - Display the created ticket with a link
    - Highlight any flagged sections
    - Suggest next step: refine weak sections or move to "Refining" when ready
@@ -73,13 +69,21 @@ Result: Traces the bug in code, creates `fix` type ticket with Current Behavior 
 
 ## Troubleshooting
 
-### Asana MCP unavailable and ASANA_TOKEN not set
-**Cause**: Neither the MCP server nor the environment variable are available.
-**Solution**: Set the env var: `export ASANA_TOKEN=your-token`. The token can be created at https://app.asana.com/0/my-apps.
+### ASANA_TOKEN not set
+**Cause**: Token not in environment. Common when shell profile hasn't been sourced.
+**Solution**: Run `source ~/.zshrc` then retry. If still missing, set it: `export ASANA_TOKEN=your-token`. Token can be created at Asana → My Settings → Apps → Developer Apps → Personal Access Tokens.
 
-### Asana project ID unknown
-**Cause**: The curl fallback needs a project ID but it's not configured.
-**Solution**: Ask the user for the Asana project ID. It's in the project URL: `https://app.asana.com/0/PROJECT_ID/...`
+### Asana API returns 401/403
+**Cause**: Token expired, or calling `/projects` without a workspace filter.
+**Solution**: Always pass `?workspace=WORKSPACE_GID` when listing projects. If token is expired, generate a new one in Asana.
+
+### Asana project/workspace ID unknown
+**Cause**: Not stored in `~/.blackbox/config.json` yet.
+**Solution**: Follow the discovery steps in `references/asana-api-guide.md` Step 1. The skill will auto-save them to config for next time.
+
+### html_notes parsing error
+**Cause**: Used `html_notes` instead of `notes`. Asana's `html_notes` requires strict XML.
+**Solution**: Always use `notes` (plain text). See `references/asana-api-guide.md` Common Mistakes.
 
 ### Codebase too large to research effectively
 **Cause**: The repo has many files and it's unclear where to focus.

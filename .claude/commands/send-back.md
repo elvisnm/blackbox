@@ -17,20 +17,22 @@ Examples:
 
 ## Instructions
 
-1. **Parse arguments**: Extract the blueprint path and the reason text.
+1. **Validate Asana access** — follow `references/asana-api-guide.md` Step 0 to verify the token is set. If missing, stop and tell the user.
 
-2. **Read the blueprint** from `.blackbox/blueprints/{type}/{name}.md` (add `.md` if missing).
+2. **Parse arguments**: Extract the blueprint path and the reason text.
 
-3. **Extract the Asana URL** from the blueprint header (`> **Asana:**`).
+3. **Read the blueprint** from `.blackbox/blueprints/{type}/{name}.md` (add `.md` if missing).
+
+4. **Extract the Asana URL** from the blueprint header (`> **Asana:**`).
    - If no Asana link, ask the user for the ticket URL.
 
-4. **Ask who to send back to** (if not obvious from the reason):
+5. **Ask who to send back to** (if not obvious from the reason):
    - **PO** — requirements need refinement, missing context, wrong assumptions
    - **DESIGN** — UI/UX spec doesn't work, need redesign, missing mockups
 
-5. **Update the Asana ticket**:
+6. **Update the Asana ticket**:
 
-   Using the Asana MCP tools (or curl fallback):
+   Using the Asana MCP tools (or curl fallback). For Asana API patterns (creating/reading/updating tasks, setting custom fields), see `references/asana-api-guide.md`.
 
    ### Sending to PO
    - Update the ticket status/section to "Needs Refinement" (or the equivalent custom field)
@@ -40,7 +42,7 @@ Examples:
    - Update the ticket status/section to "Needs Redesign" (or the equivalent custom field)
    - Add a comment: "Sent back for redesign by DEV: {reason}"
 
-6. **Confirm to the user**:
+7. **Confirm to the user**:
    - Show what was updated in Asana
    - Remind: "When the ticket comes back as 'Ready for Development', run `/refresh {type}/{name}` to pull the updates into the blueprint."
 
