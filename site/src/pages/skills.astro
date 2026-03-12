@@ -10,10 +10,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 Skills
             </h1>
             <p class="text-lg md:text-xl text-zinc-400 leading-relaxed mb-6">
-                Portable Claude Code commands that live in <span class="font-mono text-sm text-zinc-300">.claude/commands/</span> inside the repo. No plugins, no extensions — just structured prompts that keep AI aligned with what was agreed on.
+                Skills and agents — structured prompts that keep AI aligned with what was agreed on. No plugins, no extensions.
             </p>
             <p class="text-base text-zinc-500 leading-relaxed">
-                When you run a skill, Claude reads the structured prompt and executes it with full context of your codebase and blueprint. No configuration needed — clone the repo and the skills are ready to use.
+                When you run a skill, Claude executes it with full context of your codebase and blueprint. Agent-powered skills go further, spawning parallel research agents to explore the codebase before acting. Clone the repo and everything is ready to use.
             </p>
         </section>
 
@@ -31,9 +31,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/draft</span>
                         <p class="text-sm text-zinc-400 leading-relaxed">Create a new Asana ticket using the contract template. Claude structures the goal, context, and requirements from the Product Owner's input.</p>
                     </div>
-                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)]">
-                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refine</span>
-                        <p class="text-sm text-zinc-400 leading-relaxed">Agent-powered deep codebase research. Accepts an Asana URL or blueprint path. Spawns parallel research agents, then drives a guided Q&amp;A conversation.</p>
+                    <div class="p-5 rounded-xl border border-blue-500/20 bg-blue-900/5 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)] relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] pointer-events-none"></div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5">/refine</span>
+                            <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1.5 py-0.5 uppercase tracking-wider">Agent</span>
+                        </div>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Deep codebase research. Spawns 3 parallel Explore agents to map affected areas, find patterns, and detect gaps. Then drives a guided Q&amp;A conversation before writing.</p>
                     </div>
                     <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center w-full md:w-[calc(50%-0.5rem)]">
                         <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/review-ticket</span>
@@ -75,9 +79,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refresh</span>
                         <p class="text-sm text-zinc-400 leading-relaxed">Update a blueprint after a send-back. Overwrites Asana-owned sections while preserving Developer-owned sections.</p>
                     </div>
-                    <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
-                        <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/refine</span>
-                        <p class="text-sm text-zinc-400 leading-relaxed">Agent-powered deep codebase research. Spawns parallel agents to map affected areas, find patterns, and detect gaps. Drives a guided Q&amp;A before writing.</p>
+                    <div class="p-5 rounded-xl border border-blue-500/20 bg-blue-900/5 text-center flex flex-col items-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] pointer-events-none"></div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5">/refine</span>
+                            <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1.5 py-0.5 uppercase tracking-wider">Agent</span>
+                        </div>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Deep codebase research. Spawns 3 parallel Explore agents to map affected areas, find patterns, and detect gaps. Drives a guided Q&amp;A before writing.</p>
                     </div>
                     <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
                         <span class="font-mono text-sm text-orange-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/send-back</span>
@@ -134,6 +142,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="p-5 rounded-xl border border-white/5 bg-zinc-900/20 text-center flex flex-col items-center">
                         <span class="font-mono text-sm text-emerald-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5 inline-block mb-3">/status</span>
                         <p class="text-sm text-zinc-400 leading-relaxed">List blueprints and their progress.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Setup -->
+            <section class="fade-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-semibold tracking-tight text-white mb-3">Developer — Project Setup</h2>
+                    <p class="text-sm text-zinc-500">Commands to configure the project for all roles.</p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="p-5 rounded-xl border border-blue-500/20 bg-blue-900/5 text-center flex flex-col items-center w-full md:w-1/2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] pointer-events-none"></div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="font-mono text-sm text-blue-400 bg-white/[0.06] border border-white/10 rounded px-2 py-0.5">/setup-roles</span>
+                            <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1.5 py-0.5 uppercase tracking-wider">Agent</span>
+                        </div>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Generate personalized CLAUDE.md files for PO and DESIGN roles. Spawns parallel agents to research the codebase, then writes role-specific configurations to <span class="font-mono text-xs text-zinc-300">.blackbox/roles/</span>.</p>
                     </div>
                 </div>
             </section>
