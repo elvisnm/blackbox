@@ -21,10 +21,10 @@ Do all of the following in a **single parallel tool call**:
 
 1. **Check roles directory**: Run `test -d .blackbox/roles/ && echo "EXISTS" || echo "MISSING"` via Bash. If MISSING, tell the user to run `bbox init` first and stop.
 
-2. **Find and read templates**: The templates live in the **blackbox repo** (where the skills were installed from), NOT in the target project. To locate them:
-   - First check if `docs/claude-templates/CLAUDE_PO.md` exists locally (in case this IS the blackbox repo)
-   - If not found, search for the blackbox repo: `find ~/dev -maxdepth 3 -path "*/docs/claude-templates/CLAUDE_PO.md" -print -quit 2>/dev/null`
-   - Read both templates: `{blackbox-root}/docs/claude-templates/CLAUDE_PO.md` and `{blackbox-root}/docs/claude-templates/CLAUDE_DESIGN.md`
+2. **Read templates from the blackbox repo**: The templates live in the **blackbox repo**, NOT in the target project. To find the blackbox repo path:
+   - Read `~/.blackbox/config.json` and get the `blackboxRoot` field
+   - If not set, fall back to checking if `docs/claude-templates/CLAUDE_PO.md` exists locally (in case this IS the blackbox repo)
+   - Read both templates: `{blackboxRoot}/docs/claude-templates/CLAUDE_PO.md` and `{blackboxRoot}/docs/claude-templates/CLAUDE_DESIGN.md`
 
 If either the roles directory or the templates are missing, stop and explain — do not launch agents.
 

@@ -228,6 +228,7 @@ export async function init(blackboxRoot: string, pathArg?: string) {
   // Save to global config and auto-add repo
   {
     const config = readConfig();
+    config.blackboxRoot = blackboxRoot;
 
     if (isGit) {
       try {
