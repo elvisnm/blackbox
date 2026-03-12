@@ -42,6 +42,9 @@ See `docs/concept.md` for the vision and principles. See `docs/project-structure
 - `/design {asana-url}` — Fill UI/UX section of an Asana ticket with component references
 - `/review-design {asana-url}` — Validate design specs against codebase components and patterns
 
+### Project Setup
+- `/setup-roles` — Generate personalized CLAUDE.md files for PO and DESIGN roles in `.blackbox/roles/`
+
 ### Status
 - `/status [type/name]` — List blueprints with progress counts
 

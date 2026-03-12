@@ -11,6 +11,7 @@ export const FOLDER_STRUCTURE = [
   '.blackbox/blueprints',
   ...BLUEPRINT_CATEGORIES.map(c => `.blackbox/blueprints/${c}`),
   ...BLUEPRINT_CATEGORIES.map(c => `.blackbox/blueprints/assets/${c}`),
+  '.blackbox/roles',
 ];
 
 export function createFolderStructure(projectPath: string): string[] {

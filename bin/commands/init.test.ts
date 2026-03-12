@@ -45,6 +45,7 @@ describe('createFolderStructure', () => {
     expect(created).toContain('.blackbox/blueprints/assets/fix/');
     expect(created).toContain('.blackbox/blueprints/assets/improve/');
     expect(created).toContain('.blackbox/blueprints/assets/hotfix/');
+    expect(created).toContain('.blackbox/roles/');
   });
 
   it('skips already-existing folders', () => {
