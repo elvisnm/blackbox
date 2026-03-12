@@ -10,6 +10,7 @@ export interface RepoEntry {
 
 export interface BlackboxConfig {
   token?: string;
+  asanaToken?: string;
   role?: string;
   blackboxRoot?: string;
   repos: RepoEntry[];
@@ -40,6 +41,7 @@ export function readConfig(): BlackboxConfig {
 
     return {
       token: parsed.token,
+      asanaToken: parsed.asanaToken,
       role: parsed.role,
       blackboxRoot: parsed.blackboxRoot,
       repos: Array.isArray(parsed.repos) ? parsed.repos : [],

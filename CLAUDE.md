@@ -54,7 +54,7 @@ See `docs/concept.md` for the vision and principles. See `docs/project-structure
 - `bbox add-repo owner/repo [--branch name]` — Add a repo to the dashboard config
 - `bbox remove-repo owner/repo` — Remove a repo from the dashboard config
 - `bbox list-repos` — List configured repos
-- `bbox set <key> <value>` — Set a config value (token, role)
+- `bbox set <key> <value>` — Set a config value (token, asana-token, role)
 
 ## Conventions
 

@@ -4,15 +4,25 @@ How to interact with Asana from skills. Used by `/draft`, `/scaffold`, `/refine`
 
 ## Step 0: Validate Token
 
-Before any discussion or research, verify the token is available:
+Before any discussion or research, get the Asana token. Check both sources:
+
+1. **Config file** (preferred): Read `~/.blackbox/config.json` and look for the `asanaToken` field
+2. **Environment variable** (fallback): Check `$ASANA_TOKEN`
 
 ```bash
-source ~/.zshrc 2>/dev/null; echo "${ASANA_TOKEN:+SET}"
+node -e "
+const fs = require('fs');
+const p = require('os').homedir() + '/.blackbox/config.json';
+try { const c = JSON.parse(fs.readFileSync(p, 'utf8')); if (c.asanaToken) { console.log(c.asanaToken); process.exit(0); } } catch {}
+console.log(process.env.ASANA_TOKEN || '');
+"
 ```
 
 If empty, stop immediately and tell the user:
-> ASANA_TOKEN is not set. Run: `export ASANA_TOKEN="your-token"`
+> Asana token is not configured. Run: `bbox set asana-token your-token`
 > To get a token: Asana → My Settings → Apps → Developer Apps → Personal Access Tokens → Create New Token.
+
+Once you have the token, use it in all subsequent `curl` calls as `Authorization: Bearer {token}`. Do NOT rely on `$ASANA_TOKEN` env var — always use the token value you resolved in this step.
 
 ## Step 1: Resolve Workspace and Project
 

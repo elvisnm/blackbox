@@ -72,8 +72,9 @@ export function listRepos(): void {
 }
 
 export function setConfigValue(key: string, value: string): void {
-  if (key !== 'token' && key !== 'role') {
-    p.log.error(`Unknown config key: "${key}". Supported keys: token, role`);
+  const validKeys = ['token', 'asana-token', 'role'];
+  if (!validKeys.includes(key)) {
+    p.log.error(`Unknown config key: "${key}". Supported keys: ${validKeys.join(', ')}`);
     process.exit(1);
   }
 
@@ -83,9 +84,15 @@ export function setConfigValue(key: string, value: string): void {
   }
 
   const config = readConfig();
-  config[key] = value;
+  if (key === 'asana-token') {
+    config.asanaToken = value;
+  } else if (key === 'token') {
+    config.token = value;
+  } else if (key === 'role') {
+    config.role = value;
+  }
   writeConfig(config);
 
-  const display = key === 'token' ? `${value.slice(0, 8)}...` : value;
+  const display = key === 'token' || key === 'asana-token' ? `${value.slice(0, 8)}...` : value;
   p.log.success(`Set ${key} = ${display}`);
 }
