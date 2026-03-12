@@ -24,7 +24,7 @@ See `docs/concept.md` for the vision and principles. See `docs/project-structure
 ### Blueprint Lifecycle
 - `/scaffold {asana-url}` — Generate blueprint from an Asana ticket (pulls structured content)
 - `/refresh {type/name}` — Update blueprint from Asana after a send-back (overwrites Asana-owned sections, preserves DEV-owned sections)
-- `/refine {type/name}` — Research codebase, fill Codebase Context and Implementation Plan
+- `/refine {asana-url | type/name}` — Agent-powered deep codebase research. Accepts an Asana URL (refines the ticket) or a blueprint path (refines the blueprint). Spawns parallel research agents, then drives a guided Q&A conversation before writing.
 - `/send-back {type/name} {reason}` — Return ticket to PO/DESIGN via Asana status + comment
 
 ### Development Flow
@@ -38,7 +38,6 @@ See `docs/concept.md` for the vision and principles. See `docs/project-structure
 
 ### Ticket Management
 - `/draft {idea}` — Create a new Asana ticket from an idea, grounded in codebase research
-- `/refine-ticket {asana-url}` — Improve an existing Asana ticket with code-grounded details
 - `/review-ticket {asana-url}` — Validate ticket against quality gates before marking ready
 - `/design {asana-url}` — Fill UI/UX section of an Asana ticket with component references
 - `/review-design {asana-url}` — Validate design specs against codebase components and patterns

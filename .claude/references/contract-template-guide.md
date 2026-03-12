@@ -1,6 +1,6 @@
 # Contract Template
 
-Asana tickets follow this structured template. Used by `/draft`, `/refine-ticket`, and `/review-ticket`.
+Asana tickets follow this structured template. Used by `/draft`, `/refine`, and `/review-ticket`.
 
 ## Required Sections
 

@@ -91,7 +91,7 @@ DEV picks up tickets marked "Ready for Development". Claude reads the Asana tick
 | `/send-back {type/name} {reason}` | Return ticket to PO/DESIGN via Asana |
 | `/status` | List blueprints with progress |
 | `/draft {idea}` | Create new Asana ticket from idea |
-| `/refine-ticket {asana-url}` | Improve Asana ticket with codebase research |
+| `/refine {asana-url}` | Improve Asana ticket with agent-powered codebase research |
 | `/review-ticket {asana-url}` | Validate ticket against quality gates |
 | `/design {asana-url}` | Fill UI/UX section of Asana ticket |
 | `/review-design {asana-url}` | Validate design specs against codebase |
