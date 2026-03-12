@@ -209,6 +209,25 @@ export async function init(blackboxRoot: string, pathArg?: string) {
     }
 
     s.stop('Installed Claude Code skills');
+
+    // Copy references (skills depend on these)
+    const refsSourceDir = join(blackboxRoot, '.claude/references');
+    if (existsSync(refsSourceDir)) {
+      const refsDestDir = skillsLocation === 'global'
+        ? join(process.env.HOME || '~', '.claude/references')
+        : join(projectPath, '.claude/references');
+
+      if (!existsSync(refsDestDir)) {
+        mkdirSync(refsDestDir, { recursive: true });
+      }
+
+      const refFiles = readdirSync(refsSourceDir).filter(f => f.endsWith('.md'));
+      for (const file of refFiles) {
+        copyFileSync(join(refsSourceDir, file), join(refsDestDir, file));
+        const prefix = skillsLocation === 'global' ? '~/.claude/references/' : '.claude/references/';
+        created.push(prefix + file);
+      }
+    }
   }
 
   p.note(created.map(f => `  ${f}`).join('\n'), 'Created');
