@@ -59,9 +59,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                             <span class="text-blue-400">/scaffold</span>
                             <span class="text-zinc-500">Generate blueprint from Asana ticket</span>
                         </div>
-                        <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-black/40 border border-white/5 text-zinc-300">
+                        <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-black/40 border border-blue-500/20 text-zinc-300">
                             <span class="text-blue-400">/refine</span>
-                            <span class="text-zinc-500">Research codebase, fill technical context</span>
+                            <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1 py-0.5 uppercase tracking-wider">Agent</span>
+                            <span class="text-zinc-500">Deep codebase research with parallel agents</span>
                         </div>
                         <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-black/40 border border-white/5 text-zinc-300">
                             <span class="text-blue-400">/implement</span>
@@ -260,14 +261,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
                         <div class="relative pl-8">
                             <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-[#0a0a0f]"></div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-mono text-base text-blue-400 font-medium">/setup-roles</span>
+                                <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1.5 py-0.5 uppercase tracking-wider">Agent</span>
+                            </div>
+                            <p class="text-base text-zinc-500">Generate personalized CLAUDE.md files for PO and DESIGN roles. Run once after project setup.</p>
+                        </div>
+
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-[#0a0a0f]"></div>
                             <div class="font-mono text-base text-blue-400 mb-1 font-medium">/scaffold</div>
                             <p class="text-base text-zinc-500">Generate a blueprint from an Asana ticket.</p>
                         </div>
 
                         <div class="relative pl-8">
                             <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-[#0a0a0f]"></div>
-                            <div class="font-mono text-base text-blue-400 mb-1 font-medium">/refine</div>
-                            <p class="text-base text-zinc-500">Research the codebase, fill technical context and implementation plan.</p>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-mono text-base text-blue-400 font-medium">/refine</span>
+                                <span class="text-[10px] font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded px-1.5 py-0.5 uppercase tracking-wider">Agent</span>
+                            </div>
+                            <p class="text-base text-zinc-500">Spawns parallel agents to research the codebase, then drives a guided Q&amp;A to fill technical context and implementation plan.</p>
                         </div>
 
                         <div class="relative pl-8">
